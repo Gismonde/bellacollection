@@ -51,7 +51,7 @@ section{padding:5rem 1.5rem}
 .card-name{font-size:1rem;font-weight:bold;color:var(--text);margin-bottom:.3rem}
 .card-desc{font-size:.82rem;color:var(--tl);margin-bottom:.8rem;line-height:1.5}
 .swatches{display:flex;gap:.35rem;flex-wrap:wrap;margin-bottom:.8rem}
-.sw{width:18px;height:18px;border-radius:50%;border:2px solid rgba(0,0,0,.1);cursor:pointer;title:attr(title)}
+.sw{width:18px;height:18px;border-radius:50%;border:2px solid rgba(0,0,0,.1);cursor:pointer}
 .card-wa{display:flex;align-items:center;justify-content:center;gap:.5rem;background:#25d366;color:#fff;padding:.55rem 1rem;border-radius:20px;font-size:.82rem;font-weight:bold;width:100%;transition:all .3s}
 .card-wa:hover{background:#1da851}
 #about{background:linear-gradient(160deg,#fdf0ea 0%,var(--cream) 100%)}
@@ -112,8 +112,8 @@ footer a:hover{color:var(--salmon)}
 
 <section class="hero" id="accueil">
   <div class="hero-inner">
-    <div class="hero-badge" data-fr="Hair Prestige Manufacturing Nig. Ltd — Nigeria" data-en="Hair Prestige Manufacturing Nig. Ltd — Nigeria">Hair Prestige Manufacturing Nig. Ltd — Nigeria</div>
-    <h1><span data-fr="L'art des mèches,<br><em>la qualité du vrai cheveu</em>" data-en="The art of hair extensions,<br><em>the quality of real hair</em>">L'art des mèches,<br><em>la qualité du vrai cheveu</em></span></h1>
+    <div class="hero-badge">Hair Prestige Manufacturing Nig. Ltd — Nigeria</div>
+    <h1>L'art des mèches,<br><em>la qualité du vrai cheveu</em></h1>
     <p class="sub" data-fr="Nattes &amp; Crochets Premium · Fibres synthétiques haute qualité" data-en="Premium Braids &amp; Crochets · High-quality synthetic fibres">Nattes &amp; Crochets Premium · Fibres synthétiques haute qualité</p>
     <p class="tagline">…feel the touch of a real hair!</p>
     <div class="hero-cats">
@@ -127,10 +127,11 @@ footer a:hover{color:var(--salmon)}
     </a>
   </div>
 </section>
+
 <section id="catalogue">
   <div class="container">
     <div class="sec-title">
-      <h2 data-fr="Notre <span>Catalogue</span>" data-en="Our <span>Catalogue</span>">Notre <span>Catalogue</span></h2>
+      <h2>Notre <span>Catalogue</span></h2>
       <p data-fr="Toutes nos mèches — nattes &amp; crochets — en un coup d'œil" data-en="All our hair extensions — braids &amp; crochets — at a glance">Toutes nos mèches — nattes &amp; crochets — en un coup d'œil</p>
     </div>
     <div class="filters">
@@ -139,193 +140,25 @@ footer a:hover{color:var(--salmon)}
       <button class="flt" onclick="filterCat('crochet')" data-fr="Crochets" data-en="Crochets">Crochets</button>
     </div>
     <div class="grid" id="productGrid">
+      <div class="card" data-cat="braids"><div class="card-img" style="background:linear-gradient(135deg,#3a1a0e,#8b4513)"><span class="card-badge">Natte</span>🧶</div><div class="card-body"><div class="card-name">Bella Box Braid</div><div class="card-desc" data-fr="Natte carrée classique, fibre légère anti-nœuds. Tenue longue durée." data-en="Classic box braid, lightweight tangle-free fibre. Long-lasting hold.">Natte carrée classique, fibre légère anti-nœuds. Tenue longue durée.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#3b1f0a"></div><div class="sw" style="background:#8b5e3c"></div><div class="sw" style="background:#c4a265"></div><div class="sw" style="background:#d4a017"></div><div class="sw" style="background:#7b3fa0"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Box%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="braids">
-        <div class="card-img" style="background:linear-gradient(135deg,#3a1a0e,#8b4513)">
-          <span class="card-badge">Natte</span>🧶
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Box Braid</div>
-          <div class="card-desc" data-fr="Natte carrée classique, fibre légère anti-nœuds. Tenue longue durée." data-en="Classic box braid, lightweight tangle-free fibre. Long-lasting hold.">Natte carrée classique, fibre légère anti-nœuds. Tenue longue durée.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir naturel"></div>
-            <div class="sw" style="background:#3b1f0a" title="Brun foncé"></div>
-            <div class="sw" style="background:#8b5e3c" title="Brun caramel"></div>
-            <div class="sw" style="background:#c4a265" title="Blond miel"></div>
-            <div class="sw" style="background:#d4a017" title="Blond doré"></div>
-            <div class="sw" style="background:#7b3fa0" title="Violet mode"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Box%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="braids"><div class="card-img" style="background:linear-gradient(135deg,#2d1a0e,#7a3c1a)"><span class="card-badge">Natte</span>💫</div><div class="card-body"><div class="card-name">Bella Knotless Braid</div><div class="card-desc" data-fr="Natte sans nœud, ultra-légère, sans traction sur le scalp. Zéro démangeaisons." data-en="Knotless braid, ultra-light, no scalp tension. Zero itching.">Natte sans nœud, ultra-légère, sans traction sur le scalp. Zéro démangeaisons.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#5c3d1e"></div><div class="sw" style="background:#e8856a"></div><div class="sw" style="background:#d4a017"></div><div class="sw" style="background:#e91e8c"></div><div class="sw" style="background:#1565c0"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Knotless%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="braids">
-        <div class="card-img" style="background:linear-gradient(135deg,#2d1a0e,#7a3c1a)">
-          <span class="card-badge">Natte</span>💫
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Knotless Braid</div>
-          <div class="card-desc" data-fr="Natte sans nœud, ultra-légère, sans traction sur le scalp. Zéro démangeaisons." data-en="Knotless braid, ultra-light, no scalp tension. Zero itching.">Natte sans nœud, ultra-légère, sans traction sur le scalp. Zéro démangeaisons.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir"></div>
-            <div class="sw" style="background:#5c3d1e" title="Brun moyen"></div>
-            <div class="sw" style="background:#e8856a" title="Auburn"></div>
-            <div class="sw" style="background:#d4a017" title="Blond"></div>
-            <div class="sw" style="background:#e91e8c" title="Rose mode"></div>
-            <div class="sw" style="background:#1565c0" title="Bleu mode"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Knotless%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="braids"><div class="card-img" style="background:linear-gradient(135deg,#4a2010,#9a4c2a)"><span class="card-badge">Natte</span>🌿</div><div class="card-body"><div class="card-name">Bella Goddess Braid</div><div class="card-desc" data-fr="Tresse déesse avec ondulations naturelles. Compatible eau chaude pour remodeler." data-en="Goddess braid with natural waves. Hot water compatible for reshaping.">Tresse déesse avec ondulations naturelles. Compatible eau chaude pour remodeler.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#2d1a0e"></div><div class="sw" style="background:#7a3c1a"></div><div class="sw" style="background:#c4a265"></div><div class="sw" style="background:#ff6b35"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Goddess%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="braids">
-        <div class="card-img" style="background:linear-gradient(135deg,#4a2010,#9a4c2a)">
-          <span class="card-badge">Natte</span>🌿
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Goddess Braid</div>
-          <div class="card-desc" data-fr="Tresse déesse avec ondulations naturelles. Compatible eau chaude pour remodeler." data-en="Goddess braid with natural waves. Hot water compatible for reshaping.">Tresse déesse avec ondulations naturelles. Compatible eau chaude pour remodeler.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir jet"></div>
-            <div class="sw" style="background:#2d1a0e" title="Noir brun"></div>
-            <div class="sw" style="background:#7a3c1a" title="Brun roux"></div>
-            <div class="sw" style="background:#c4a265" title="Blond foncé"></div>
-            <div class="sw" style="background:#ff6b35" title="Orange mode"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Goddess%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="braids"><div class="card-img" style="background:linear-gradient(135deg,#3d1a0a,#8b4020)"><span class="card-badge">Natte</span>✨</div><div class="card-body"><div class="card-name">Bella Micro Braid</div><div class="card-desc" data-fr="Micro-tresses fines et légères. Sans chute, sans frisottis. Pose ultra-rapide." data-en="Fine lightweight micro braids. Shedding-free, frizz-free. Ultra-fast installation.">Micro-tresses fines et légères. Sans chute, sans frisottis. Pose ultra-rapide.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#4a2a0e"></div><div class="sw" style="background:#8b6914"></div><div class="sw" style="background:#e8b84b"></div><div class="sw" style="background:#9c27b0"></div><div class="sw" style="background:#00897b"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Micro%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="braids">
-        <div class="card-img" style="background:linear-gradient(135deg,#3d1a0a,#8b4020)">
-          <span class="card-badge">Natte</span>✨
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Micro Braid</div>
-          <div class="card-desc" data-fr="Micro-tresses fines et légères. Sans chute, sans frisottis. Pose ultra-rapide." data-en="Fine lightweight micro braids. Shedding-free, frizz-free. Ultra-fast installation.">Micro-tresses fines et légères. Sans chute, sans frisottis. Pose ultra-rapide.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir naturel"></div>
-            <div class="sw" style="background:#4a2a0e" title="Brun riche"></div>
-            <div class="sw" style="background:#8b6914" title="Blond foncé"></div>
-            <div class="sw" style="background:#e8b84b" title="Blond clair"></div>
-            <div class="sw" style="background:#9c27b0" title="Violet"></div>
-            <div class="sw" style="background:#00897b" title="Vert émeraude"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Micro%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="braids"><div class="card-img" style="background:linear-gradient(135deg,#2a1208,#6b2f12)"><span class="card-badge">Natte</span>👑</div><div class="card-body"><div class="card-name">Bella Jumbo Braid</div><div class="card-desc" data-fr="Tresse jumbo épaisse et volumineuse. Idéale pour les coiffures XXL tendance." data-en="Thick voluminous jumbo braid. Ideal for trendy XXL hairstyles.">Tresse jumbo épaisse et volumineuse. Idéale pour les coiffures XXL tendance.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#5c3322"></div><div class="sw" style="background:#d4691e"></div><div class="sw" style="background:#ffd700"></div><div class="sw" style="background:#e91e63"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Jumbo%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="braids">
-        <div class="card-img" style="background:linear-gradient(135deg,#2a1208,#6b2f12)">
-          <span class="card-badge">Natte</span>👑
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Jumbo Braid</div>
-          <div class="card-desc" data-fr="Tresse jumbo épaisse et volumineuse. Idéale pour les coiffures XXL tendance." data-en="Thick volumious jumbo braid. Ideal for trendy XXL hairstyles.">Tresse jumbo épaisse et volumineuse. Idéale pour les coiffures XXL tendance.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir"></div>
-            <div class="sw" style="background:#5c3322" title="Brun foncé"></div>
-            <div class="sw" style="background:#d4691e" title="Brun roux"></div>
-            <div class="sw" style="background:#ffd700" title="Blond doré"></div>
-            <div class="sw" style="background:#e91e63" title="Rose vif"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Jumbo%20Braid." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="crochet"><div class="card-img" style="background:linear-gradient(135deg,#1a0d1a,#5c2d6e)"><span class="card-badge">Crochet</span>🌸</div><div class="card-body"><div class="card-name">Bella Passion Twist</div><div class="card-desc" data-fr="Twist passion bouclé, ultra-doux. Fibre premium sans démangeaisons. Effet naturel." data-en="Curly passion twist, ultra-soft. Premium itch-free fibre. Natural effect.">Twist passion bouclé, ultra-doux. Fibre premium sans démangeaisons. Effet naturel.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#3b1f0a"></div><div class="sw" style="background:#8b5e3c"></div><div class="sw" style="background:#c4a265"></div><div class="sw" style="background:#e8856a"></div><div class="sw" style="background:#9c27b0"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Passion%20Twist." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="crochet">
-        <div class="card-img" style="background:linear-gradient(135deg,#1a0d1a,#5c2d6e)">
-          <span class="card-badge">Crochet</span>🌸
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Passion Twist</div>
-          <div class="card-desc" data-fr="Twist passion bouclé, ultra-doux. Fibre premium sans démangeaisons. Effet naturel." data-en="Curly passion twist, ultra-soft. Premium itch-free fibre. Natural effect.">Twist passion bouclé, ultra-doux. Fibre premium sans démangeaisons. Effet naturel.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir jet"></div>
-            <div class="sw" style="background:#3b1f0a" title="Brun foncé"></div>
-            <div class="sw" style="background:#8b5e3c" title="Brun moyen"></div>
-            <div class="sw" style="background:#c4a265" title="Blond miel"></div>
-            <div class="sw" style="background:#e8856a" title="Auburn roux"></div>
-            <div class="sw" style="background:#9c27b0" title="Violet mode"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Passion%20Twist." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="crochet"><div class="card-img" style="background:linear-gradient(135deg,#0d1a1a,#1a5c5c)"><span class="card-badge">Crochet</span>🌊</div><div class="card-body"><div class="card-name">Bella Water Wave</div><div class="card-desc" data-fr="Ondulations vague d'eau naturelles. Compatible eau chaude. Brillance longue durée." data-en="Natural water wave curls. Hot water compatible. Long-lasting shine.">Ondulations vague d'eau naturelles. Compatible eau chaude. Brillance longue durée.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#2d1a0e"></div><div class="sw" style="background:#6b3a1e"></div><div class="sw" style="background:#c4a265"></div><div class="sw" style="background:#1565c0"></div><div class="sw" style="background:#00897b"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Water%20Wave." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="crochet">
-        <div class="card-img" style="background:linear-gradient(135deg,#0d1a1a,#1a5c5c)">
-          <span class="card-badge">Crochet</span>🌊
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Water Wave</div>
-          <div class="card-desc" data-fr="Ondulations vague d'eau naturelles. Compatible eau chaude. Brillance longue durée." data-en="Natural water wave curls. Hot water compatible. Long-lasting shine.">Ondulations vague d'eau naturelles. Compatible eau chaude. Brillance longue durée.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir"></div>
-            <div class="sw" style="background:#2d1a0e" title="Noir brun"></div>
-            <div class="sw" style="background:#6b3a1e" title="Brun"></div>
-            <div class="sw" style="background:#c4a265" title="Blond"></div>
-            <div class="sw" style="background:#1565c0" title="Bleu océan"></div>
-            <div class="sw" style="background:#00897b" title="Vert émeraude"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Water%20Wave." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="crochet"><div class="card-img" style="background:linear-gradient(135deg,#1a1a0a,#4a4a1a)"><span class="card-badge">Crochet</span>🌀</div><div class="card-body"><div class="card-name">Bella Faux Loc</div><div class="card-desc" data-fr="Faux locks tendance, texture rustique authentique. Pose crochet rapide et légère." data-en="Trendy faux locs, authentic rustic texture. Fast lightweight crochet installation.">Faux locks tendance, texture rustique authentique. Pose crochet rapide et légère.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#3b220a"></div><div class="sw" style="background:#7a4a1a"></div><div class="sw" style="background:#b8860b"></div><div class="sw" style="background:#8b0000"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Faux%20Loc." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="crochet">
-        <div class="card-img" style="background:linear-gradient(135deg,#1a1a0a,#4a4a1a)">
-          <span class="card-badge">Crochet</span>🌀
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Faux Loc</div>
-          <div class="card-desc" data-fr="Faux locks tendance, texture rustique authentique. Pose crochet rapide et légère." data-en="Trendy faux locs, authentic rustic texture. Fast lightweight crochet installation.">Faux locks tendance, texture rustique authentique. Pose crochet rapide et légère.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir naturel"></div>
-            <div class="sw" style="background:#3b220a" title="Brun chocolat"></div>
-            <div class="sw" style="background:#7a4a1a" title="Brun roux"></div>
-            <div class="sw" style="background:#b8860b" title="Blond doré"></div>
-            <div class="sw" style="background:#8b0000" title="Bordeaux"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Faux%20Loc." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="crochet"><div class="card-img" style="background:linear-gradient(135deg,#1a0d0d,#5c1a1a)"><span class="card-badge">Crochet</span>🌺</div><div class="card-body"><div class="card-name">Bella Spring Twist</div><div class="card-desc" data-fr="Spring twist léger et rebondissant. Anti-chute, anti-frisottis. Longue tenue." data-en="Light bouncy spring twist. Shedding-free, frizz-free. Long-lasting.">Spring twist léger et rebondissant. Anti-chute, anti-frisottis. Longue tenue.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#4a1a1a"></div><div class="sw" style="background:#c4a265"></div><div class="sw" style="background:#e8856a"></div><div class="sw" style="background:#e91e8c"></div><div class="sw" style="background:#ff9800"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Spring%20Twist." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
-      <div class="card" data-cat="crochet">
-        <div class="card-img" style="background:linear-gradient(135deg,#1a0d0d,#5c1a1a)">
-          <span class="card-badge">Crochet</span>🌺
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Spring Twist</div>
-          <div class="card-desc" data-fr="Spring twist léger et rebondissant. Anti-chute, anti-frisottis. Longue tenue." data-en="Light bouncy spring twist. Shedding-free, frizz-free. Long-lasting.">Spring twist léger et rebondissant. Anti-chute, anti-frisottis. Longue tenue.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir"></div>
-            <div class="sw" style="background:#4a1a1a" title="Bordeaux foncé"></div>
-            <div class="sw" style="background:#c4a265" title="Blond miel"></div>
-            <div class="sw" style="background:#e8856a" title="Auburn"></div>
-            <div class="sw" style="background:#e91e8c" title="Rose mode"></div>
-            <div class="sw" style="background:#ff9800" title="Orange doré"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Spring%20Twist." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
-
-      <div class="card" data-cat="crochet">
-        <div class="card-img" style="background:linear-gradient(135deg,#0d0d1a,#1a2a5c)">
-          <span class="card-badge">Crochet</span>💎
-        </div>
-        <div class="card-body">
-          <div class="card-name">Bella Butterfly Loc</div>
-          <div class="card-desc" data-fr="Butterfly locs volumineux et texturés. Fibre douce premium. Style bohème unique." data-en="Voluminous textured butterfly locs. Premium soft fibre. Unique bohemian style.">Butterfly locs volumineux et texturés. Fibre douce premium. Style bohème unique.</div>
-          <div class="swatches">
-            <div class="sw" style="background:#1a0a06" title="Noir jet"></div>
-            <div class="sw" style="background:#3d2a1a" title="Brun foncé"></div>
-            <div class="sw" style="background:#8b5e3c" title="Caramel"></div>
-            <div class="sw" style="background:#d4a017" title="Blond chaud"></div>
-            <div class="sw" style="background:#7b3fa0" title="Violet"></div>
-            <div class="sw" style="background:#1565c0" title="Bleu nuit"></div>
-          </div>
-          <a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Butterfly%20Loc." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a>
-        </div>
-      </div>
+      <div class="card" data-cat="crochet"><div class="card-img" style="background:linear-gradient(135deg,#0d0d1a,#1a2a5c)"><span class="card-badge">Crochet</span>💎</div><div class="card-body"><div class="card-name">Bella Butterfly Loc</div><div class="card-desc" data-fr="Butterfly locs volumineux et texturés. Fibre douce premium. Style bohème unique." data-en="Voluminous textured butterfly locs. Premium soft fibre. Unique bohemian style.">Butterfly locs volumineux et texturés. Fibre douce premium. Style bohème unique.</div><div class="swatches"><div class="sw" style="background:#1a0a06"></div><div class="sw" style="background:#3d2a1a"></div><div class="sw" style="background:#8b5e3c"></div><div class="sw" style="background:#d4a017"></div><div class="sw" style="background:#7b3fa0"></div><div class="sw" style="background:#1565c0"></div></div><a href="https://wa.me/2349060002592?text=Bonjour%2C%20je%20voudrais%20commander%20Bella%20Butterfly%20Loc." class="card-wa" target="_blank">📲 <span data-fr="Commander" data-en="Order">Commander</span></a></div></div>
 
     </div>
   </div>
@@ -333,7 +166,7 @@ footer a:hover{color:var(--salmon)}
 <section id="about">
   <div class="container">
     <div class="sec-title">
-      <h2 data-fr="À <span>Propos</span>" data-en="<span>About</span> Us">À <span>Propos</span></h2>
+      <h2>À <span>Propos</span></h2>
       <p data-fr="Notre histoire, nos valeurs, notre promesse" data-en="Our story, our values, our promise">Notre histoire, nos valeurs, notre promesse</p>
     </div>
     <div class="about-grid">
@@ -342,11 +175,11 @@ footer a:hover{color:var(--salmon)}
         <p style="margin-top:1rem;font-style:italic;color:var(--tl);font-size:.85rem">…feel the touch of a real hair!</p>
       </div>
       <div class="about-text">
-        <h3 data-fr="Hair Prestige Manufacturing Nig. Ltd" data-en="Hair Prestige Manufacturing Nig. Ltd">Hair Prestige Manufacturing Nig. Ltd</h3>
+        <h3>Hair Prestige Manufacturing Nig. Ltd</h3>
         <p data-fr="Bella Collection est la marque phare de Hair Prestige Manufacturing Nig. Ltd, fabricant établi au Nigeria et spécialisé dans la production de mèches de haute qualité pour les coiffures tressées et au crochet." data-en="Bella Collection is the flagship brand of Hair Prestige Manufacturing Nig. Ltd, a manufacturer based in Nigeria specialised in producing high-quality hair extensions for braided and crochet styles.">Bella Collection est la marque phare de Hair Prestige Manufacturing Nig. Ltd, fabricant établi au Nigeria et spécialisé dans la production de mèches de haute qualité pour les coiffures tressées et au crochet.</p>
         <p data-fr="Reconnue comme une référence en Afrique et au-delà, Bella Collection s'impose grâce à sa maîtrise des fibres synthétiques premium, sa gamme de couleurs exceptionnelle et son engagement qualité sans compromis : sans nœuds, sans démangeaisons, sans chute." data-en="Recognised as a reference across Africa and beyond, Bella Collection stands out through its mastery of premium synthetic fibres, exceptional colour range, and uncompromising quality commitment: tangle-free, itch-free, shedding-free.">Reconnue comme une référence en Afrique et au-delà, Bella Collection s'impose grâce à sa maîtrise des fibres synthétiques premium, sa gamme de couleurs exceptionnelle et son engagement qualité sans compromis : sans nœuds, sans démangeaisons, sans chute.</p>
         <p data-fr="Des tons naturels (noir, bruns, blonds) aux dégradés racine foncée, en passant par les teintes mode et fantaisie (bleu, rose, violet, vert, orange, jaune), chaque produit Bella Collection est conçu pour magnifier la beauté africaine authentique." data-en="From natural tones (black, browns, blondes) to dark-root gradients, through to fashion and fantasy shades (blue, pink, purple, green, orange, yellow), every Bella Collection product is designed to magnify authentic African beauty.">Des tons naturels (noir, bruns, blonds) aux dégradés racine foncée, en passant par les teintes mode et fantaisie (bleu, rose, violet, vert, orange, jaune), chaque produit Bella Collection est conçu pour magnifier la beauté africaine authentique.</p>
-        <blockquote data-fr="« feel the touch of a real hair » — La promesse d'une fibre si douce, si vraie, qu'on ne fait plus la différence." data-en="« feel the touch of a real hair » — The promise of a fibre so soft, so real, you can no longer tell the difference.">« feel the touch of a real hair » — La promesse d'une fibre si douce, si vraie, qu'on ne fait plus la différence.</blockquote>
+        <blockquote>« feel the touch of a real hair » — La promesse d'une fibre si douce, si vraie, qu'on ne fait plus la différence.</blockquote>
         <div class="vals">
           <div class="val"><div class="icon">🧶</div><h4 data-fr="Sans nœuds" data-en="Tangle-free">Sans nœuds</h4><p data-fr="Fibre lisse, démêlage facile" data-en="Smooth fibre, easy detangling">Fibre lisse, démêlage facile</p></div>
           <div class="val"><div class="icon">💆</div><h4 data-fr="Sans démangeaisons" data-en="Itch-free">Sans démangeaisons</h4><p data-fr="Fibre douce sur le scalp" data-en="Gentle fibre on the scalp">Fibre douce sur le scalp</p></div>
@@ -356,8 +189,7 @@ footer a:hover{color:var(--salmon)}
       </div>
     </div>
   </div>
-</section>
-<section id="contact">
+</section><section id="contact">
   <div class="container">
     <div class="sec-title">
       <h2 data-fr="Contact &amp; <span>Commande</span>" data-en="Contact &amp; <span>Order</span>">Contact &amp; <span>Commande</span></h2>
@@ -419,7 +251,7 @@ footer a:hover{color:var(--salmon)}
           <span class="ci-icon">📧</span>
           <div>
             <strong style="color:rgba(255,255,255,.7)">Email</strong><br>
-            <a href="mailto:bellapestige.nig@gmail.com">bellapestige.nig@gmail.com</a>
+            <a href="mailto:bellaprestige.nig@gmail.com">bellaprestige.nig@gmail.com</a>
           </div>
         </div>
         <div class="ci-item">
@@ -444,12 +276,13 @@ footer a:hover{color:var(--salmon)}
   <p style="margin-bottom:.3rem">KM 11, Idiroko Road, Opp. IDL, Iju-Ota, Ogun State — Nigeria</p>
   <p style="margin-bottom:.8rem">
     <a href="tel:+2349060002592">09060002592</a> · 
-    <a href="mailto:bellapestige.nig@gmail.com">bellapestige.nig@gmail.com</a> · 
+    <a href="mailto:bellaprestige.nig@gmail.com">bellaprestige.nig@gmail.com</a> · 
     <a href="https://wa.me/2349060002592" target="_blank">WhatsApp</a>
   </p>
   <p style="font-style:italic;color:var(--salmon-l)">…feel the touch of a real hair!</p>
   <p style="margin-top:.8rem;font-size:.75rem;color:rgba(255,255,255,.3)">&copy; 2025 Hair Prestige Manufacturing Nig. Ltd · Tous droits réservés</p>
 </footer>
+
 <script>
 function setLang(l){
   document.body.className=l;
@@ -488,4 +321,4 @@ window.addEventListener('scroll',()=>{
 });
 </script>
 </body>
-  </html>
+</html>
