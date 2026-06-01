@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LumièreVive – Mèches d'Exception</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --gold: #c8a96e;
+      --gold-light: #e8d5a3;
+      --dark: #1a1209;
+      --dark-mid: #2e2010;
+      --cream: #faf6ee;
+      --text: #3a2c1a;
+      --text-light: #7a6040;
+      --accent: #8b4513;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Georgia', serif; background: var(--cream); color: var(--text); line-height: 1.7; }
+    a { text-decoration: none; color: inherit; }
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(26,18,9,0.96); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; }
+    .logo { font-size: 1.6rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
+    .logo span { color: #fff; font-weight: 300; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: #e0d0b0; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--gold); color: var(--dark) !important; padding: 0.5rem 1.4rem; border-radius: 30px; font-weight: bold; }
+    .hero { min-height: 100vh; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 50%, #3a2a12 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; padding: 2rem; }
+    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(200,169,110,0.15) 0%, transparent 70%); }
+    .hero-content { position: relative; z-index: 1; max-width: 700px; }
+    .hero-badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 0.3rem 1.2rem; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2rem; border-radius: 20px; }
+    .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); color: #fff; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero h1 span { color: var(--gold); }
+    .hero p { color: #b8a88a; font-size: 1.15rem; max-width: 500px; margin: 0 auto 2.5rem; }
+    .btn { display: inline-block; padding: 0.9rem 2.4rem; border-radius: 40px; font-size: 0.95rem; letter-spacing: 1px; transition: all 0.3s; cursor: pointer; font-family: Georgia, serif; }
+    .btn-primary { background: var(--gold); color: var(--dark); font-weight: bold; }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,169,110,0.4); }
+    .btn-outline { border: 2px solid var(--gold); color: var(--gold); margin-left: 1rem; }
+    .hero-candles { margin-top: 4rem; display: flex; justify-content: center; gap: 2rem; }
+    .candle-icon { font-size: 2.5rem; animation: flicker 2s infinite alternate; filter: drop-shadow(0 0 10px rgba(200,169,110,0.6)); }
+    .candle-icon:nth-child(2) { animation-delay: 0.7s; font-size: 3.5rem; }
+    @keyframes flicker { 0% { opacity: 0.85; transform: scale(1) rotate(-1deg); } 100% { opacity: 1; transform: scale(1.05) rotate(1deg); } }
+    section { padding: 5rem 2rem; }
+    .section-label { text-align: center; color: var(--gold); font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 0.8rem; }
+    .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem; color: var(--dark); }
+    .section-sub { text-align: center; color: var(--text-light); max-width: 550px; margin: 0 auto 3.5rem; font-size: 1.05rem; }
+    .divider { width: 60px; height: 3px; background: var(--gold); margin: 0 auto 1.5rem; border-radius: 2px; }
+    .features { background: var(--dark); }
+    .features .section-title { color: #fff; }
+    .features .section-sub { color: #9a8a70; }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .feature-card { background: rgba(200,169,110,0.07); border: 1px solid rgba(200,169,110,0.2); padding: 2rem; border-radius: 12px; text-align: center; transition: all 0.3s; }
+    .feature-card:hover { background: rgba(200,169,110,0.13); border-color: var(--gold); transform: translateY(-4px); }
+    .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+    .feature-card h3 { color: var(--gold); margin-bottom: 0.6rem; font-size: 1.1rem; }
+    .feature-card p { color: #9a8a70; font-size: 0.92rem; }
+    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
+    .product-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: all 0.3s; }
+    .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+    .product-img { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
+    .product-img .badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--dark); font-size: 0.7rem; font-weight: bold; padding: 0.25rem 0.7rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
+    .p1 { background: linear-gradient(135deg, #2e1a0e, #4a2a12); }
+    .p2 { background: linear-gradient(135deg, #1a2a1a, #2a3a20); }
+    .p3 { background: linear-gradient(135deg, #1a1a2e, #2a203a); }
+    .p4 { background: linear-gradient(135deg, #2a1a0a, #3a2510); }
+    .p5 { background: linear-gradient(135deg, #0a1a2a, #1a2535); }
+    .p6 { background: linear-gradient(135deg, #2a1a1a, #3a2020); }
+    .product-info { padding: 1.5rem; }
+    .product-info h3 { font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--dark); }
+    .product-info .desc { color: var(--text-light); font-size: 0.88rem; margin-bottom: 1rem; }
+    .product-footer { display: flex; align-items: center; justify-content: space-between; }
+    .price { font-size: 1.2rem; font-weight: bold; color: var(--accent); }
+    .add-btn { background: var(--gold); border: none; color: var(--dark); padding: 0.5rem 1.2rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-family: Georgia, serif; font-weight: bold; transition: all 0.3s; }
+    .savoir-faire { background: #f5f0e8; }
+    .sf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1100px; margin: 0 auto; align-items: center; }
+    @media (max-width: 768px) { .sf-grid { grid-template-columns: 1fr; } .nav-links { display: none; } nav { padding: 1rem 1.5rem; } }
+    .sf-visual { background: var(--dark); border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 6rem; position: relative; overflow: hidden; }
+    .sf-text h2 { font-size: 2.2rem; margin-bottom: 1rem; }
+    .sf-text p { color: var(--text-light); margin-bottom: 1.5rem; }
+    .sf-steps { list-style: none; }
+    .sf-steps li { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
+    .step-num { min-width: 36px; height: 36px; background: var(--gold); color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; }
+    .testimonials { background: var(--dark); }
+    .testimonials .section-title { color: #fff; }
+    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
+    .testi-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(200,169,110,0.2); padding: 2rem; border-radius: 14px; }
+    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 1rem; }
+    .testi-text { color: #c8b898; font-style: italic; margin-bottom: 1.5rem; }
+    .testi-author { color: var(--gold); font-weight: bold; }
+    .testi-role { color: #7a6a50; font-size: 0.85rem; }
+    .newsletter { background: linear-gradient(135deg, var(--dark), #2e2010); text-align: center; }
+    .newsletter .section-title { color: #fff; }
+    .newsletter p { color: #9a8a70; margin-bottom: 2rem; }
+    .nl-form { display: flex; max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.08); border: 1px solid rgba(200,169,110,0.3); border-radius: 40px; overflow: hidden; padding: 0.3rem; }
+    .nl-form input { flex: 1; background: none; border: none; padding: 0.8rem 1.5rem; color: #fff; font-size: 0.95rem; outline: none; }
+    .nl-form input::placeholder { color: #7a6a50; }
+    .nl-form button { background: var(--gold); border: none; padding: 0.8rem 1.8rem; border-radius: 35px; color: var(--dark); font-weight: bold; cursor: pointer; }
+    #contact { background: var(--cream); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: start; }
+    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+    .contact-info h3 { font-size: 1.4rem; margin-bottom: 1.5rem; }
+    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
+    .contact-icon { font-size: 1.5rem; }
+    .contact-item p { color: var(--text-light); font-size: 0.95rem; }
+    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
+    .contact-form input, .contact-form textarea { padding: 0.9rem 1.2rem; border: 1px solid #d8c8a8; border-radius: 10px; font-family: Georgia, serif; font-size: 0.95rem; background: #fff; color: var(--text); outline: none; transition: border-color 0.3s; }
+    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold); }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    footer { background: var(--dark); color: #7a6a50; text-align: center; padding: 2.5rem; font-size: 0.88rem; }
+    footer .footer-logo { font-size: 1.4rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 0.8rem; }
+    footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Lumiere<span>Vive</span></div>
+    <ul class="nav-links">
+      <li><a href="#accueil">Accueil</a></li>
+      <li><a href="#produits">Produits</a></li>
+      <li><a href="#savoir-faire">Savoir-faire</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#produits" class="nav-cta">Boutique</a></li>
+    </ul>
+  </nav>
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <div class="hero-badge">Artisan Francais</div>
+      <h1>Des <span>Meches</span> qui<br>Illuminent l Instant</h1>
+      <p>Meches de coton, de bois et de chanvre faconnees a la main pour sublimer vos bougies et creations.</p>
+      <a href="#produits" class="btn btn-primary">Decouvrir la Collection</a>
+      <a href="#savoir-faire" class="btn btn-outline">Notre Savoir-faire</a>
+      <div class="hero-candles">
+        <span class="candle-icon">&#x1F56F;</span>
+        <span class="candle-icon">&#x1F56F;</span>
+        <span class="candle-icon">&#x1F56F;</span>
+      </div>
+    </div>
+  </section>
+  <section class="features">
+    <p class="section-label">Nos Engagements</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Pourquoi Choisir LumiereVive ?</h2>
+    <p class="section-sub">Chaque meche est selectionnee avec soin pour garantir une combustion parfaite.</p>
+    <div class="features-grid">
+      <div class="feature-card"><div class="feature-icon">&#x1F33F;</div><h3>100% Naturel</h3><p>Fibres non traitees, sans metaux lourds ni produits chimiques.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F525;</div><h3>Combustion Maitrisee</h3><p>Flamme stable, sans claquement ni fumee excessive.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F932;</div><h3>Fait Main</h3><p>Chaque meche est tressee et finie a la main dans notre atelier.</p></div>
+      <div class="feature-card"><div class="feature-icon">&#x1F4E6;</div><h3>Sur Mesure</h3><p>Diametres, longueurs et matieres adaptes a chaque type de cire.</p></div>
+    </div>
+  </section>
+  <section id="produits">
+    <p class="section-label">Notre Catalogue</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Collection de Meches</h2>
+    <p class="section-sub">Des meches pour tous les types de cires et toutes les tailles de bougies.</p>
+    <div class="products-grid">
+      <div class="product-card"><div class="product-img p1">&#x1F9F5;<span class="badge">Best-seller</span></div><div class="product-info"><h3>Meche Coton Naturel</h3><p class="desc">Tressage classique, ideale pour cires de soja et de paraffine. Diam. 2-8 mm.</p><div class="product-footer"><span class="price">A partir de 4,90 EUR</span><button class="add-btn">Choisir</button></div></div></div>
+      <div class="product-card"><div class="product-img p2">&#x1FAB5;<span class="badge">Tendance</span></div><div class="product-info"><h3>Meche en Bois</h3><p class="desc">Flamme crepitante et chaleur d un feu de bois. Epaisseur 0,5-1,5 mm.</p><div class="product-footer"><span class="price">A partir de 6,50 EUR</span><button class="add-btn">Choisir</button></div></div></div>
+      <div class="product-card"><div class="product-img p3">&#x1F33F;</div><div class="product-info"><h3>Meche Chanvre Bio</h3><p class="desc">Combustion lente et reguliere, parfaite pour bougies pilier.</p><div class="product-footer"><span class="price">A partir de 5,50 EUR</span><button class="add-btn">Choisir</button></div></div></div>
+      <div class="product-card"><div class="product-img p4">&#x2728;<span class="badge">Nouveau</span></div><div class="product-info"><h3>Meche Craquante Double</h3><p class="desc">Double lame bois pour un effet crepitement intense, ideale grands formats.</p><div class="product-footer"><span class="price">A partir de 8,90 EUR</span><button class="add-btn">Choisir</button></div></div></div>
+      <div class="product-card"><div class="product-img p5">&#x1F4A7;</div><div class="product-info"><h3>Meche Coton Cire</h3><p class="desc">Pre-ciree pour une tenue parfaite et un centrage facile dans le moule.</p><div class="product-footer"><span class="price">A partir de 5,20 EUR</span><button class="add-btn">Choisir</button></div></div></div>
+      <div class="product-card"><div class="product-img p6">&#x1F381;</div><div class="product-info"><h3>Kit Decouverte</h3><p class="desc">Assortiment de 30 meches variees pour tester toutes nos gammes.</p><div class="product-footer"><span class="price">24,90 EUR</span><button class="add-btn">Choisir</button></div></div></div>
+    </div>
+  </section>
+  <section class="savoir-faire" id="savoir-faire">
+    <div class="sf-grid">
+      <div class="sf-visual">&#x1F56F;</div>
+      <div class="sf-text">
+        <p class="section-label" style="text-align:left">Notre Methode</p>
+        <div class="divider" style="margin:0 0 1rem"></div>
+        <h2>Un Savoir-faire Artisanal</h2>
+        <p>Depuis 2015, nous fabriquons des meches de qualite superieure dans notre atelier normand.</p>
+        <ul class="sf-steps">
+          <li><div class="step-num">1</div><p><strong>Selection des matieres</strong> - Fibres 100% naturelles sourcees aupres de producteurs certifies.</p></li>
+          <li><div class="step-num">2</div><p><strong>Tressage artisanal</strong> - Realise a la main sur nos metiers a tisser traditionnels.</p></li>
+          <li><div class="step-num">3</div><p><strong>Tests de combustion</strong> - Chaque diametre est teste dans differentes cires.</p></li>
+          <li><div class="step-num">4</div><p><strong>Controle qualite</strong> - Inspection visuelle de chaque bobine avant expedition.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="testimonials">
+    <p class="section-label">Ils nous font confiance</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Avis de nos Clients</h2>
+    <div class="testi-grid">
+      <div class="testi-card"><div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div><p class="testi-text">"Les meches en bois sont absolument magnifiques. Le crepitement est envoutant !"</p><p class="testi-author">Sophie M.</p><p class="testi-role">Creatrice de bougies artisanales</p></div>
+      <div class="testi-card"><div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div><p class="testi-text">"Qualite irreprochable, livraison rapide. Mes clients sont ravis du resultat."</p><p class="testi-author">Marc D.</p><p class="testi-role">Boutiquier - Paris 11e</p></div>
+      <div class="testi-card"><div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div><p class="testi-text">"Le kit decouverte est parfait pour trouver la meche ideale. Je recommande vivement !"</p><p class="testi-author">Elise T.</p><p class="testi-role">Amatrice passionnee</p></div>
+    </div>
+  </section>
+  <section class="newsletter">
+    <p class="section-label">Restez informe</p>
+    <div class="divider"></div>
+    <h2 class="section-title">La Newsletter LumiereVive</h2>
+    <p>Recevez nos nouveautes, tutoriels et offres exclusives dans votre boite mail.</p>
+    <form class="nl-form" onsubmit="return false">
+      <input type="email" placeholder="Votre adresse e-mail...">
+      <button type="submit">S inscrire</button>
+    </form>
+  </section>
+  <section id="contact">
+    <p class="section-label">Contactez-nous</p>
+    <div class="divider"></div>
+    <h2 class="section-title">Parlons Ensemble</h2>
+    <p class="section-sub">Besoin de conseils ? Devis professionnel ? Nous repondons sous 24h.</p>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>LumiereVive Atelier</h3>
+        <div class="contact-item"><span class="contact-icon">&#x1F4CD;</span><p>12 Rue des Artisans<br>27000 Evreux, Normandie</p></div>
+        <div class="contact-item"><span class="contact-icon">&#x1F4E7;</span><p>contact@lumierevive.fr</p></div>
+        <div class="contact-item"><span class="contact-icon">&#x1F4DE;</span><p>+33 (0)2 32 XX XX XX<br>Lun-Ven, 9h-18h</p></div>
+        <div class="contact-item"><span class="contact-icon">&#x1F69A;</span><p>Livraison France et Europe<br>Colissimo - 2 a 4 jours ouvres</p></div>
+      </div>
+      <form class="contact-form" onsubmit="return false">
+        <input type="text" placeholder="Votre nom">
+        <input type="email" placeholder="Votre e-mail">
+        <input type="text" placeholder="Sujet">
+        <textarea placeholder="Votre message..."></textarea>
+        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-logo">Lumiere<strong style="color:#fff">Vive</strong></div>
+    <p>2026 LumiereVive - Tous droits reserves</p>
+    <p><a href="#">Mentions legales</a> | <a href="#">CGV</a> | <a href="#">Politique de confidentialite</a></p>
+    <p style="margin-top:0.8rem;font-size:0.8rem">Fait avec amour en Normandie, France</p>
+  </footer>
+</body>
+</html>
