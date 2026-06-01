@@ -1,340 +1,255 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bella Collection – Meches d Exception | Hair Prestige Manufacturing</title>
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root {
-      --gold: #c8a96e;
-      --gold-light: #e8d5a3;
-      --dark: #1a1209;
-      --dark-mid: #2e2010;
-      --cream: #faf6ee;
-      --text: #3a2c1a;
-      --text-light: #7a6040;
-      --accent: #8b4513;
-    }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Georgia', serif; background: var(--cream); color: var(--text); line-height: 1.7; }
-    a { text-decoration: none; color: inherit; }
-    nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(26,18,9,0.96); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; }
-    .logo { font-size: 1.6rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
-    .logo span { color: #fff; font-weight: 300; }
-    .logo-sub { font-size: 0.6rem; color: #9a8a70; letter-spacing: 3px; text-transform: uppercase; display: block; margin-top: -4px; }
-    .nav-links { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a { color: #e0d0b0; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
-    .nav-links a:hover { color: var(--gold); }
-    .nav-cta { background: var(--gold); color: var(--dark) !important; padding: 0.5rem 1.4rem; border-radius: 30px; font-weight: bold; }
-    .hero { min-height: 100vh; background: linear-gradient(135deg, var(--dark) 0%, var(--dark-mid) 50%, #3a2a12 100%); display: flex; align-items: center; justify-content: center; text-align: center; position: relative; overflow: hidden; padding: 2rem; }
-    .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(200,169,110,0.15) 0%, transparent 70%); }
-    .hero-content { position: relative; z-index: 1; max-width: 700px; }
-    .hero-badge { display: inline-block; border: 1px solid var(--gold); color: var(--gold); padding: 0.3rem 1.2rem; font-size: 0.75rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 2rem; border-radius: 20px; }
-    .hero h1 { font-size: clamp(2.5rem, 6vw, 5rem); color: #fff; line-height: 1.1; margin-bottom: 1.5rem; }
-    .hero h1 span { color: var(--gold); }
-    .hero p { color: #b8a88a; font-size: 1.15rem; max-width: 500px; margin: 0 auto 2.5rem; }
-    .btn { display: inline-block; padding: 0.9rem 2.4rem; border-radius: 40px; font-size: 0.95rem; letter-spacing: 1px; transition: all 0.3s; cursor: pointer; font-family: Georgia, serif; }
-    .btn-primary { background: var(--gold); color: var(--dark); font-weight: bold; }
-    .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,169,110,0.4); }
-    .btn-outline { border: 2px solid var(--gold); color: var(--gold); margin-left: 1rem; }
-    .btn-outline:hover { background: var(--gold); color: var(--dark); }
-    .hero-candles { margin-top: 4rem; display: flex; justify-content: center; gap: 2rem; }
-    .candle-icon { font-size: 2.5rem; animation: flicker 2s infinite alternate; filter: drop-shadow(0 0 10px rgba(200,169,110,0.6)); }
-    .candle-icon:nth-child(2) { animation-delay: 0.7s; font-size: 3.5rem; }
-    .candle-icon:nth-child(3) { animation-delay: 1.3s; }
-    @keyframes flicker { 0% { opacity: 0.85; transform: scale(1) rotate(-1deg); } 100% { opacity: 1; transform: scale(1.05) rotate(1deg); } }
-    section { padding: 5rem 2rem; }
-    .section-label { text-align: center; color: var(--gold); font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 0.8rem; }
-    .section-title { text-align: center; font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem; color: var(--dark); }
-    .section-sub { text-align: center; color: var(--text-light); max-width: 550px; margin: 0 auto 3.5rem; font-size: 1.05rem; }
-    .divider { width: 60px; height: 3px; background: var(--gold); margin: 0 auto 1.5rem; border-radius: 2px; }
-    .features { background: var(--dark); }
-    .features .section-title { color: #fff; }
-    .features .section-sub { color: #9a8a70; }
-    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
-    .feature-card { background: rgba(200,169,110,0.07); border: 1px solid rgba(200,169,110,0.2); padding: 2rem; border-radius: 12px; text-align: center; transition: all 0.3s; }
-    .feature-card:hover { background: rgba(200,169,110,0.13); border-color: var(--gold); transform: translateY(-4px); }
-    .feature-icon { font-size: 2.5rem; margin-bottom: 1rem; }
-    .feature-card h3 { color: var(--gold); margin-bottom: 0.6rem; font-size: 1.1rem; }
-    .feature-card p { color: #9a8a70; font-size: 0.92rem; }
-    .products-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 2rem; max-width: 1200px; margin: 0 auto; }
-    .product-card { background: #fff; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: all 0.3s; }
-    .product-card:hover { transform: translateY(-6px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
-    .product-img { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 4rem; position: relative; }
-    .product-img .badge { position: absolute; top: 12px; right: 12px; background: var(--gold); color: var(--dark); font-size: 0.7rem; font-weight: bold; padding: 0.25rem 0.7rem; border-radius: 20px; text-transform: uppercase; letter-spacing: 1px; }
-    .p1 { background: linear-gradient(135deg, #2e1a0e, #4a2a12); }
-    .p2 { background: linear-gradient(135deg, #1a2a1a, #2a3a20); }
-    .p3 { background: linear-gradient(135deg, #1a1a2e, #2a203a); }
-    .p4 { background: linear-gradient(135deg, #2a1a0a, #3a2510); }
-    .p5 { background: linear-gradient(135deg, #0a1a2a, #1a2535); }
-    .p6 { background: linear-gradient(135deg, #2a1a1a, #3a2020); }
-    .product-info { padding: 1.5rem; }
-    .product-info h3 { font-size: 1.1rem; margin-bottom: 0.3rem; color: var(--dark); }
-    .product-info .desc { color: var(--text-light); font-size: 0.88rem; margin-bottom: 1rem; }
-    .product-footer { display: flex; align-items: center; justify-content: space-between; }
-    .price { font-size: 1.2rem; font-weight: bold; color: var(--accent); }
-    .add-btn { background: var(--gold); border: none; color: var(--dark); padding: 0.5rem 1.2rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-family: Georgia, serif; font-weight: bold; transition: all 0.3s; }
-    .add-btn:hover { background: var(--gold-light); transform: scale(1.05); }
-    .savoir-faire { background: #f5f0e8; }
-    .sf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1100px; margin: 0 auto; align-items: center; }
-    @media (max-width: 768px) { .sf-grid { grid-template-columns: 1fr; } .nav-links { display: none; } nav { padding: 1rem 1.5rem; } .contact-grid { grid-template-columns: 1fr; } }
-    .sf-visual { background: var(--dark); border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 6rem; position: relative; overflow: hidden; }
-    .sf-text h2 { font-size: 2.2rem; margin-bottom: 1rem; }
-    .sf-text p { color: var(--text-light); margin-bottom: 1.5rem; }
-    .sf-steps { list-style: none; }
-    .sf-steps li { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
-    .step-num { min-width: 36px; height: 36px; background: var(--gold); color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; }
-    .sf-steps li p { margin: 0; font-size: 0.95rem; }
-    .testimonials { background: var(--dark); }
-    .testimonials .section-title { color: #fff; }
-    .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
-    .testi-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(200,169,110,0.2); padding: 2rem; border-radius: 14px; }
-    .stars { color: var(--gold); font-size: 1.1rem; margin-bottom: 1rem; }
-    .testi-text { color: #c8b898; font-style: italic; margin-bottom: 1.5rem; }
-    .testi-author { color: var(--gold); font-weight: bold; }
-    .testi-role { color: #7a6a50; font-size: 0.85rem; }
-    .newsletter { background: linear-gradient(135deg, var(--dark), #2e2010); text-align: center; }
-    .newsletter .section-title { color: #fff; }
-    .newsletter p { color: #9a8a70; margin-bottom: 2rem; }
-    .nl-form { display: flex; max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.08); border: 1px solid rgba(200,169,110,0.3); border-radius: 40px; overflow: hidden; padding: 0.3rem; }
-    .nl-form input { flex: 1; background: none; border: none; padding: 0.8rem 1.5rem; color: #fff; font-size: 0.95rem; font-family: Georgia, serif; outline: none; }
-    .nl-form input::placeholder { color: #7a6a50; }
-    .nl-form button { background: var(--gold); border: none; padding: 0.8rem 1.8rem; border-radius: 35px; color: var(--dark); font-weight: bold; cursor: pointer; font-family: Georgia, serif; font-size: 0.9rem; transition: background 0.3s; }
-    .nl-form button:hover { background: var(--gold-light); }
-    #contact { background: var(--cream); }
-    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: start; }
-    .contact-info h3 { font-size: 1.4rem; margin-bottom: 1.5rem; }
-    .contact-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
-    .contact-icon { font-size: 1.5rem; }
-    .contact-item p { color: var(--text-light); font-size: 0.95rem; }
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-    .contact-form input, .contact-form textarea { padding: 0.9rem 1.2rem; border: 1px solid #d8c8a8; border-radius: 10px; font-family: Georgia, serif; font-size: 0.95rem; background: #fff; color: var(--text); outline: none; transition: border-color 0.3s; }
-    .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold); }
-    .contact-form textarea { min-height: 130px; resize: vertical; }
-    footer { background: var(--dark); color: #7a6a50; text-align: center; padding: 2.5rem; font-size: 0.88rem; }
-    footer .footer-logo { font-size: 1.4rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 0.3rem; }
-    footer .footer-company { font-size: 0.75rem; color: #5a4a30; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; }
-    footer p { margin-bottom: 0.4rem; }
-    footer a { color: var(--gold); }
-    footer a:hover { text-decoration: underline; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bella Collection - Extensions Capillaires Premium | Hair Prestige Manufacturing</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--coral:#d4745a;--coral-light:#e8a090;--dark:#1a0f0a;--dark-mid:#2e1a12;--cream:#faf6f3;--text:#2e1a12;--text-light:#7a5a4a;--accent:#b85a3a}
+html{scroll-behavior:smooth}
+body{font-family:'Georgia',serif;background:var(--cream);color:var(--text);line-height:1.7}
+a{text-decoration:none;color:inherit}
+nav{position:fixed;top:0;width:100%;z-index:100;background:rgba(26,15,10,0.96);backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:space-between;padding:0.6rem 3rem}
+.nav-logo img{height:60px;border-radius:50%;mix-blend-mode:screen}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:#e0cfc8;font-size:0.85rem;letter-spacing:1px;text-transform:uppercase;transition:color 0.3s}
+.nav-links a:hover{color:var(--coral)}
+.nav-cta{background:var(--coral);color:#fff!important;padding:0.5rem 1.4rem;border-radius:30px;font-weight:bold}
+.lang-switch{display:flex;gap:0.5rem;align-items:center}
+.lang-btn{background:none;border:1px solid rgba(212,116,90,0.4);color:#e0cfc8;padding:0.25rem 0.7rem;border-radius:20px;font-size:0.75rem;cursor:pointer;font-family:Georgia,serif;letter-spacing:1px;transition:all 0.3s}
+.lang-btn:hover,.lang-btn.active{background:var(--coral);border-color:var(--coral);color:#fff}
+.hero{min-height:100vh;background:linear-gradient(135deg,var(--dark) 0%,var(--dark-mid) 50%,#3a1a0e 100%);display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:2rem}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(212,116,90,0.12) 0%,transparent 70%)}
+.hero-content{position:relative;z-index:1;max-width:750px}
+.hero-badge{display:inline-block;border:1px solid var(--coral);color:var(--coral);padding:0.3rem 1.2rem;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;margin-bottom:2rem;border-radius:20px}
+.hero h1{font-size:clamp(2.2rem,5vw,4.5rem);color:#fff;line-height:1.15;margin-bottom:1.5rem}
+.hero h1 span{color:var(--coral)}
+.hero p{color:#c8a898;font-size:1.1rem;max-width:560px;margin:0 auto 2.5rem}
+.hero-tagline{font-style:italic;color:var(--coral-light)!important;font-size:1.05rem!important}
+.btn{display:inline-block;padding:0.9rem 2.4rem;border-radius:40px;font-size:0.95rem;letter-spacing:1px;transition:all 0.3s;cursor:pointer;font-family:Georgia,serif}
+.btn-primary{background:var(--coral);color:#fff;font-weight:bold}
+.btn-primary:hover{background:var(--coral-light);transform:translateY(-2px);box-shadow:0 8px 25px rgba(212,116,90,0.4)}
+.btn-outline{border:2px solid var(--coral);color:var(--coral);margin-left:1rem}
+.btn-outline:hover{background:var(--coral);color:#fff}
+section{padding:5rem 2rem}
+.section-label{text-align:center;color:var(--coral);font-size:0.75rem;letter-spacing:5px;text-transform:uppercase;margin-bottom:0.8rem}
+.section-title{text-align:center;font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:1rem;color:var(--dark)}
+.section-sub{text-align:center;color:var(--text-light);max-width:600px;margin:0 auto 3.5rem;font-size:1.05rem}
+.divider{width:60px;height:3px;background:var(--coral);margin:0 auto 1.5rem;border-radius:2px}
+.about{background:var(--cream)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;max-width:1100px;margin:0 auto;align-items:start}
+.about-text h2{font-size:2rem;margin-bottom:1rem;color:var(--dark)}
+.about-text p{color:var(--text-light);margin-bottom:1.2rem;font-size:1rem}
+.about-text .quote{font-style:italic;color:var(--coral);font-size:1.1rem;border-left:3px solid var(--coral);padding-left:1rem;margin:1.5rem 0}
+.about-features{display:flex;flex-direction:column;gap:1rem}
+.about-feature{display:flex;align-items:flex-start;gap:1rem;background:#fff;padding:1.2rem;border-radius:12px;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.about-feature-icon{font-size:1.8rem;flex-shrink:0}
+.about-feature h4{color:var(--dark);font-size:0.95rem;margin-bottom:0.2rem}
+.about-feature p{color:var(--text-light);font-size:0.88rem;margin:0}
+.catalog{background:#f5eeea}
+.families-grid{display:grid;grid-template-columns:1fr 1fr;gap:2.5rem;max-width:1000px;margin:0 auto 4rem}
+.family-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,0.07)}
+.family-header{padding:2.5rem 2rem 1.5rem;text-align:center}
+.family-icon{font-size:4rem;margin-bottom:1rem;display:block}
+.family-header h3{font-size:1.6rem;color:var(--dark);margin-bottom:0.5rem}
+.family-header p{color:var(--text-light);font-size:0.95rem}
+.family-tags{display:flex;flex-wrap:wrap;gap:0.5rem;padding:0 2rem 2rem;justify-content:center}
+.tag{background:rgba(212,116,90,0.1);color:var(--coral);border:1px solid rgba(212,116,90,0.3);padding:0.3rem 0.9rem;border-radius:20px;font-size:0.8rem}
+.colors{background:var(--dark)}
+.colors .section-title{color:#fff}
+.colors .section-sub{color:#a89080}
+.colors-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:1.5rem;max-width:900px;margin:0 auto}
+.color-group{text-align:center}
+.color-swatches{display:flex;gap:0.4rem;justify-content:center;margin-bottom:0.6rem;flex-wrap:wrap}
+.swatch{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,0.15)}
+.color-group span{color:#a89080;font-size:0.82rem;letter-spacing:1px;text-transform:uppercase}
+.qualities{background:var(--dark)}
+.qualities .section-title{color:#fff}
+.qualities .section-sub{color:#a89080}
+.qualities-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;max-width:1100px;margin:0 auto}
+.quality-card{background:rgba(212,116,90,0.07);border:1px solid rgba(212,116,90,0.2);padding:2rem;border-radius:12px;text-align:center;transition:all 0.3s}
+.quality-card:hover{background:rgba(212,116,90,0.13);border-color:var(--coral);transform:translateY(-4px)}
+.quality-icon{font-size:2.5rem;margin-bottom:1rem}
+.quality-card h3{color:var(--coral);margin-bottom:0.6rem;font-size:1.05rem}
+.quality-card p{color:#a89080;font-size:0.9rem}
+#contact{background:#f5eeea}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;max-width:1000px;margin:0 auto;align-items:start}
+.contact-info h3{font-size:1.4rem;margin-bottom:1.5rem;color:var(--dark)}
+.contact-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.contact-icon{font-size:1.5rem}
+.contact-item p{color:var(--text-light);font-size:0.95rem}
+.contact-form{display:flex;flex-direction:column;gap:1rem}
+.contact-form input,.contact-form textarea{padding:0.9rem 1.2rem;border:1px solid #d8c0b0;border-radius:10px;font-family:Georgia,serif;font-size:0.95rem;background:#fff;color:var(--text);outline:none;transition:border-color 0.3s}
+.contact-form input:focus,.contact-form textarea:focus{border-color:var(--coral)}
+.contact-form textarea{min-height:130px;resize:vertical}
+.contact-form button{background:var(--coral);color:#fff;border:none;padding:0.9rem;border-radius:10px;font-size:1rem;font-family:Georgia,serif;cursor:pointer;font-weight:bold;transition:background 0.3s}
+.contact-form button:hover{background:var(--accent)}
+footer{background:var(--dark);color:#7a5a4a;text-align:center;padding:2.5rem;font-size:0.88rem}
+footer .footer-logo img{height:70px;border-radius:50%;mix-blend-mode:screen;margin-bottom:0.8rem}
+footer .footer-company{font-size:0.75rem;color:#5a3a2a;letter-spacing:3px;text-transform:uppercase;margin-bottom:1rem}
+footer p{margin-bottom:0.4rem}
+footer a{color:var(--coral)}
+footer a:hover{text-decoration:underline}
+@media(max-width:768px){nav{padding:0.6rem 1.2rem}.nav-links{display:none}.about-grid{grid-template-columns:1fr;gap:2.5rem}.families-grid{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
+.en{display:none}.fr{display:block}
+body.lang-en .fr{display:none}body.lang-en .en{display:block}
+</style>
 </head>
 <body>
-
-  <!-- NAVIGATION -->
-  <nav>
-    <div class="logo">
-      <img src="logo-bella-collection.png" alt="Bella Collection" style="height:60px; border-radius:50%; mix-blend-mode:screen;">
-      
+<nav>
+  <div class="nav-logo"><img src="logo-bella-collection.png" alt="Bella Collection"></div>
+  <ul class="nav-links">
+    <li><a href="#about" class="fr">La Marque</a><a href="#about" class="en">The Brand</a></li>
+    <li><a href="#catalog" class="fr">Catalogue</a><a href="#catalog" class="en">Catalogue</a></li>
+    <li><a href="#colors" class="fr">Coloris</a><a href="#colors" class="en">Colours</a></li>
+    <li><a href="#contact" class="fr">Contact</a><a href="#contact" class="en">Contact</a></li>
+    <li><a href="#contact" class="nav-cta fr">Distributeurs</a><a href="#contact" class="nav-cta en">Distributors</a></li>
+  </ul>
+  <div class="lang-switch">
+    <button class="lang-btn active" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">Hair Prestige Manufacturing Nig. Ltd</div>
+    <h1 class="fr">La Marque <span>Bella</span><br>Collection</h1>
+    <h1 class="en">The <span>Bella</span><br>Collection Brand</h1>
+    <p class="fr">Nattes et crochets en fibre de synthese premium, fabriques au Nigeria et distribues dans toute l'Afrique.</p>
+    <p class="en">Premium synthetic-fibre braids and crochet extensions, made in Nigeria and distributed across Africa.</p>
+    <p class="hero-tagline">&laquo;&nbsp;feel the touch of a real hair&nbsp;&raquo;</p>
+    <a href="#catalog" class="btn btn-primary fr">Decouvrir le catalogue</a>
+    <a href="#catalog" class="btn btn-primary en">Explore the catalogue</a>
+    <a href="#about" class="btn btn-outline fr">La marque</a>
+    <a href="#about" class="btn btn-outline en">The brand</a>
+  </div>
+</section>
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-text">
+      <p class="section-label fr">La Marque</p>
+      <p class="section-label en">The Brand</p>
+      <h2 class="fr">Bella Collection par Hair Prestige Manufacturing</h2>
+      <h2 class="en">Bella Collection by Hair Prestige Manufacturing</h2>
+      <div class="divider"></div>
+      <p class="fr">Bella Collection est la marque de Hair Prestige Manufacturing Nig. Ltd, fabricant etabli au Nigeria et specialise dans les nattes et les crochets. Reconnue comme une reference dans toute l'Afrique, la marque concoit et fabrique une vaste gamme de meches en fibre de synthese de qualite superieure, pensees pour offrir le naturel et le confort d'une veritable chevelure. Distribuee a travers le continent, elle s'est imposee parmi les meilleures de sa categorie.</p>
+      <p class="en">Bella Collection is the brand of Hair Prestige Manufacturing Nig. Ltd, a Nigeria-based manufacturer specialising in braids and crochet styles. Recognised as a benchmark across Africa, the brand designs and produces a wide range of premium synthetic-fibre extensions, crafted to deliver the natural look and comfort of real hair. Distributed throughout the continent, it has established itself among the very best in its field.</p>
+      <blockquote class="quote">&laquo;&nbsp;feel the touch of a real hair&nbsp;&raquo;</blockquote>
+      <p class="fr">Au-dela de l'esthetique, Bella Collection met en avant la qualite d'usage de ses produits : la plupart ne s'emmelent pas, se brossent aisement, ne provoquent pas de demangeaisons et ne perdent pas leurs fibres. Certains modeles supportent meme l'eau chaude et le fer chauffant, pour faciliter le coiffage et tenir les boucles dans la duree.</p>
+      <p class="en">Beyond their beauty, Bella Collection's products are built for everyday wear: most are tangle-free, easy to brush, itch-free and shedding-free. Several styles even withstand hot water and a heated iron, making them easy to style and helping curls hold over time.</p>
     </div>
-    <ul class="nav-links">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#produits">Produits</a></li>
-      <li><a href="#savoir-faire">Savoir-faire</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#produits" class="nav-cta">Boutique</a></li>
-    </ul>
-  </nav>
-
-  <!-- HERO -->
-  <section class="hero" id="accueil">
-    <div class="hero-content">
-      <div class="hero-badge">Hair Prestige Manufacturing</div>
-      <h1>La Marque <span>Bella</span><br>Collection</h1>
-      <p>Meches de coton, de bois et de chanvre faconnees avec precision pour sublimer vos bougies et creations.</p>
-      <a href="#produits" class="btn btn-primary">Decouvrir la Collection</a>
-      <a href="#savoir-faire" class="btn btn-outline">Notre Savoir-faire</a>
-      <div class="hero-candles">
-        <span class="candle-icon">&#x1F56F;</span>
-        <span class="candle-icon">&#x1F56F;</span>
-        <span class="candle-icon">&#x1F56F;</span>
-      </div>
+    <div class="about-features">
+      <div class="about-feature"><span class="about-feature-icon">✨</span><div><h4 class="fr">Sans emmellement</h4><h4 class="en">Tangle-free</h4><p class="fr">Les fibres ne s'entortillent pas au quotidien.</p><p class="en">Fibres stay smooth and knot-free with daily wear.</p></div></div>
+      <div class="about-feature"><span class="about-feature-icon">💆</span><div><h4 class="fr">Sans demangeaisons</h4><h4 class="en">Itch-free</h4><p class="fr">Doux sur le cuir chevelu, meme pour les peaux sensibles.</p><p class="en">Gentle on the scalp, even for sensitive skin.</p></div></div>
+      <div class="about-feature"><span class="about-feature-icon">🌊</span><div><h4 class="fr">Eau chaude &amp; fer</h4><h4 class="en">Hot water &amp; iron</h4><p class="fr">Certains modeles se coiffent a l'eau chaude ou au fer chauffant.</p><p class="en">Select styles can be styled with hot water or a heated iron.</p></div></div>
+      <div class="about-feature"><span class="about-feature-icon">🌍</span><div><h4 class="fr">Reference en Afrique</h4><h4 class="en">Africa's benchmark</h4><p class="fr">Distribuee dans tout le continent, parmi les meilleures de sa categorie.</p><p class="en">Distributed across the continent, among the very best in its field.</p></div></div>
     </div>
-  </section>
-
-  <!-- FEATURES -->
-  <section class="features">
-    <p class="section-label">Nos Engagements</p>
-    <div class="divider"></div>
-    <h2 class="section-title">Pourquoi Choisir Bella Collection ?</h2>
-    <p class="section-sub">Chaque meche est selectionnee avec soin par Hair Prestige Manufacturing pour garantir une combustion parfaite.</p>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F33F;</div>
-        <h3>100% Naturel</h3>
-        <p>Fibres non traitees, sans metaux lourds ni produits chimiques, respectueuses de l environnement.</p>
+  </div>
+</section>
+<section class="catalog" id="catalog">
+  <p class="section-label fr">Ce que la marque propose</p>
+  <p class="section-label en">What the brand offers</p>
+  <h2 class="section-title fr">Deux grandes familles</h2>
+  <h2 class="section-title en">Two main families</h2>
+  <div class="divider"></div>
+  <p class="section-sub fr">Le catalogue couvre tous les styles et toutes les envies, des coiffures attachees aux poses rapides en textures bouclees ou torsadees.</p>
+  <p class="section-sub en">The catalogue covers every style and every mood, from plaited styles to quick-install curled and twisted textures.</p>
+  <div class="families-grid">
+    <div class="family-card">
+      <div class="family-header">
+        <span class="family-icon">&#129322;</span>
+        <h3 class="fr">Les Nattes</h3><h3 class="en">Braids</h3>
+        <p class="fr">Pour le tressage et les coiffures attachees, avec des longueurs parfois spectaculaires et des poids varies selon l'effet recherche.</p>
+        <p class="en">For plaiting and tied-up styles, with striking lengths and weights that vary to suit the desired effect.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F525;</div>
-        <h3>Combustion Maitrisee</h3>
-        <p>Flamme stable, sans claquement ni fumee excessive, pour une diffusion parfaite de vos fragrances.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F932;</div>
-        <h3>Fait Main</h3>
-        <p>Chaque meche est tressee et finie a la main dans notre atelier de production.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">&#x1F4E6;</div>
-        <h3>Sur Mesure</h3>
-        <p>Diametres, longueurs et matieres adaptes a chaque type de cire et format de bougie.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRODUITS -->
-  <section id="produits">
-    <p class="section-label">Notre Catalogue</p>
-    <div class="divider"></div>
-    <h2 class="section-title">Collection Bella – Meches Premium</h2>
-    <p class="section-sub">Des meches pour tous les types de cires et toutes les tailles de bougies.</p>
-    <div class="products-grid">
-      <div class="product-card">
-        <div class="product-img p1">&#x1F9F5;<span class="badge">Best-seller</span></div>
-        <div class="product-info">
-          <h3>Bella Coton Naturel</h3>
-          <p class="desc">Tressage classique, ideale pour cires de soja et de paraffine. Diam. 2-8 mm.</p>
-          <div class="product-footer"><span class="price">A partir de 4,90 EUR</span><button class="add-btn">Choisir</button></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img p2">&#x1FAB5;<span class="badge">Tendance</span></div>
-        <div class="product-info">
-          <h3>Bella Bois Premium</h3>
-          <p class="desc">Flamme crepitante et chaleur d un feu de bois. Epaisseur 0,5-1,5 mm.</p>
-          <div class="product-footer"><span class="price">A partir de 6,50 EUR</span><button class="add-btn">Choisir</button></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img p3">&#x1F33F;</div>
-        <div class="product-info">
-          <h3>Bella Chanvre Bio</h3>
-          <p class="desc">Combustion lente et reguliere, parfaite pour bougies pilier et containers larges.</p>
-          <div class="product-footer"><span class="price">A partir de 5,50 EUR</span><button class="add-btn">Choisir</button></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img p4">&#x2728;<span class="badge">Nouveau</span></div>
-        <div class="product-info">
-          <h3>Bella Double Craquante</h3>
-          <p class="desc">Double lame bois pour un effet crepitement intense, ideale grands formats.</p>
-          <div class="product-footer"><span class="price">A partir de 8,90 EUR</span><button class="add-btn">Choisir</button></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img p5">&#x1F4A7;</div>
-        <div class="product-info">
-          <h3>Bella Coton Cire</h3>
-          <p class="desc">Pre-ciree pour une tenue parfaite et un centrage facile dans le moule.</p>
-          <div class="product-footer"><span class="price">A partir de 5,20 EUR</span><button class="add-btn">Choisir</button></div>
-        </div>
-      </div>
-      <div class="product-card">
-        <div class="product-img p6">&#x1F381;</div>
-        <div class="product-info">
-          <h3>Bella Kit Decouverte</h3>
-          <p class="desc">Assortiment de 30 meches variees pour tester toute la gamme Bella Collection.</p>
-          <div class="product-footer"><span class="price">24,90 EUR</span><button class="add-btn">Choisir</button></div>
-        </div>
+      <div class="family-tags">
+        <span class="tag">Box Braids</span><span class="tag">Knotless</span><span class="tag">Passion Twist</span><span class="tag">Jumbo Braids</span><span class="tag">Pre-stretched</span><span class="tag">Senegalese Twist</span>
       </div>
     </div>
-  </section>
-
-  <!-- SAVOIR-FAIRE -->
-  <section class="savoir-faire" id="savoir-faire">
-    <div class="sf-grid">
-      <div class="sf-visual">&#x1F56F;</div>
-      <div class="sf-text">
-        <p class="section-label" style="text-align:left;margin-bottom:.5rem;">Notre Methode</p>
-        <div class="divider" style="margin:0 0 1rem;"></div>
-        <h2>Hair Prestige Manufacturing – L Excellence Artisanale</h2>
-        <p>Depuis sa creation, Hair Prestige Manufacturing fabrique des meches de qualite superieure. Chaque lot Bella Collection est teste et valide avant expedition.</p>
-        <ul class="sf-steps">
-          <li><div class="step-num">1</div><p><strong>Selection des matieres</strong> – Fibres 100% naturelles sourcees aupres de producteurs certifies.</p></li>
-          <li><div class="step-num">2</div><p><strong>Tressage artisanal</strong> – Realise a la main sur nos metiers a tisser traditionnels.</p></li>
-          <li><div class="step-num">3</div><p><strong>Tests de combustion</strong> – Chaque diametre est teste dans differentes cires et temperatures.</p></li>
-          <li><div class="step-num">4</div><p><strong>Controle qualite</strong> – Inspection visuelle et mesure de chaque bobine avant expedition.</p></li>
-        </ul>
+    <div class="family-card">
+      <div class="family-header">
+        <span class="family-icon">&#127744;</span>
+        <h3 class="fr">Les Crochets</h3><h3 class="en">Crochet Styles</h3>
+        <p class="fr">Poses rapides, textures bouclees ou torsadees : des locs a l'afro, en passant par les boucles serrees et les ondulations douces.</p>
+        <p class="en">Quick installation, curled or twisted textures: from locs to afro, through tight curls and soft waves.</p>
+      </div>
+      <div class="family-tags">
+        <span class="tag">Locs</span><span class="tag">Afro Curls</span><span class="tag">Butterfly Locs</span><span class="tag">Water Wave</span><span class="tag">Faux Locs</span><span class="tag">Spring Twist</span>
       </div>
     </div>
-  </section>
-
-  <!-- TEMOIGNAGES -->
-  <section class="testimonials">
-    <p class="section-label">Ils nous font confiance</p>
-    <div class="divider"></div>
-    <h2 class="section-title">Avis sur Bella Collection</h2>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-        <p class="testi-text">"Les meches Bella Bois sont absolument magnifiques. Le crepitement est envoutant et la flamme reste parfaitement stable. Je ne changerai plus !"</p>
-        <p class="testi-author">Sophie M.</p>
-        <p class="testi-role">Creatrice de bougies artisanales</p>
-      </div>
-      <div class="testi-card">
-        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-        <p class="testi-text">"Qualite irreprochable, livraison rapide. J ai commande les meches Bella Coton pour ma boutique et mes clients sont ravis du resultat."</p>
-        <p class="testi-author">Marc D.</p>
-        <p class="testi-role">Boutiquier – Paris 11e</p>
-      </div>
-      <div class="testi-card">
-        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
-        <p class="testi-text">"Le kit decouverte Bella est parfait pour trouver la meche ideale. Accompagnement tres reactif de Hair Prestige Manufacturing, je recommande vivement !"</p>
-        <p class="testi-author">Elise T.</p>
-        <p class="testi-role">Amatrice passionnee</p>
-      </div>
+  </div>
+</section>
+<section class="colors" id="colors">
+  <p class="section-label fr">Une richesse de teintes</p>
+  <p class="section-label en">A wealth of shades</p>
+  <h2 class="section-title">Coloris</h2>
+  <div class="divider"></div>
+  <p class="section-sub fr">Des tons naturels (noir, bruns, blonds) aux degrades racine foncee, jusqu'aux teintes mode et fantaisie (bleu, rose, violet, vert, orange, jaune).</p>
+  <p class="section-sub en">From natural tones (black, browns, blondes) and dark-root blends, to bold fashion shades (blue, pink, purple, green, orange, yellow).</p>
+  <div class="colors-grid">
+    <div class="color-group"><div class="color-swatches"><div class="swatch" style="background:#1a1008"></div><div class="swatch" style="background:#3a2010"></div><div class="swatch" style="background:#6a3a18"></div></div><span class="fr">Naturels</span><span class="en">Naturals</span></div>
+    <div class="color-group"><div class="color-swatches"><div class="swatch" style="background:#c8a050"></div><div class="swatch" style="background:#e0c880"></div><div class="swatch" style="background:#f0e0a0"></div></div><span class="fr">Blonds</span><span class="en">Blondes</span></div>
+    <div class="color-group"><div class="color-swatches"><div class="swatch" style="background:#1a0808"></div><div class="swatch" style="background:#f0d090"></div></div><span class="fr">Degrade</span><span class="en">Ombre</span></div>
+    <div class="color-group"><div class="color-swatches"><div class="swatch" style="background:#1a3a6a"></div><div class="swatch" style="background:#6a1a6a"></div><div class="swatch" style="background:#c81a3a"></div></div><span class="fr">Mode</span><span class="en">Fashion</span></div>
+    <div class="color-group"><div class="color-swatches"><div class="swatch" style="background:#1a6a3a"></div><div class="swatch" style="background:#c86a1a"></div><div class="swatch" style="background:#c8c81a"></div></div><span class="fr">Fantaisie</span><span class="en">Bold</span></div>
+  </div>
+</section>
+<section class="qualities">
+  <p class="section-label fr">Nos engagements qualite</p>
+  <p class="section-label en">Our quality commitments</p>
+  <h2 class="section-title fr">Pourquoi choisir Bella Collection ?</h2>
+  <h2 class="section-title en">Why choose Bella Collection?</h2>
+  <div class="divider"></div>
+  <p class="section-sub fr">Chaque produit est concu pour allier esthetique et confort au quotidien.</p>
+  <p class="section-sub en">Every product is designed to combine beauty and everyday comfort.</p>
+  <div class="qualities-grid">
+    <div class="quality-card"><div class="quality-icon">&#128683;</div><h3 class="fr">Sans emmellement</h3><h3 class="en">Tangle-free</h3><p class="fr">Les fibres restent lisses, meme apres plusieurs semaines de port.</p><p class="en">Fibres stay smooth and knot-free, even after several weeks of wear.</p></div>
+    <div class="quality-card"><div class="quality-icon">&#128400;</div><h3 class="fr">Facile a brosser</h3><h3 class="en">Easy to brush</h3><p class="fr">La texture souple facilite le brossage et l'entretien au quotidien.</p><p class="en">The supple texture makes daily brushing and maintenance easy.</p></div>
+    <div class="quality-card"><div class="quality-icon">&#128134;</div><h3 class="fr">Sans demangeaisons</h3><h3 class="en">Itch-free</h3><p class="fr">Doux sur le cuir chevelu, pour un confort optimal.</p><p class="en">Gentle on the scalp for optimal comfort.</p></div>
+    <div class="quality-card"><div class="quality-icon">&#9986;</div><h3 class="fr">Sans perte de fibres</h3><h3 class="en">Shedding-free</h3><p class="fr">Les fibres ne se detachent pas et conservent leur volume.</p><p class="en">Fibres do not shed and maintain their volume.</p></div>
+    <div class="quality-card"><div class="quality-icon">&#127754;</div><h3 class="fr">Eau chaude</h3><h3 class="en">Hot water-friendly</h3><p class="fr">Certains modeles acceptent l'eau chaude pour fixer les boucles.</p><p class="en">Select styles accept hot water to set and redefine curls.</p></div>
+    <div class="quality-card"><div class="quality-icon">&#9832;</div><h3 class="fr">Fer chauffant</h3><h3 class="en">Heat-friendly</h3><p class="fr">Compatible avec le fer plat ou boucleur sur certaines references.</p><p class="en">Compatible with flat iron or curling iron on select styles.</p></div>
+  </div>
+</section>
+<section id="contact">
+  <p class="section-label fr">Nous contacter</p>
+  <p class="section-label en">Get in touch</p>
+  <h2 class="section-title fr">Distributeurs &amp; Partenaires</h2>
+  <h2 class="section-title en">Distributors &amp; Partners</h2>
+  <div class="divider"></div>
+  <p class="section-sub fr">Vous etes distributeur, revendeur ou importateur ? Contactez-nous pour rejoindre le reseau Bella Collection.</p>
+  <p class="section-sub en">Are you a distributor, retailer or importer? Contact us to join the Bella Collection network.</p>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Hair Prestige Manufacturing Nig. Ltd</h3>
+      <div class="contact-item"><span class="contact-icon">&#128205;</span><p>Nigeria</p></div>
+      <div class="contact-item"><span class="contact-icon">&#128231;</span><p>contact@bellacollection.com</p></div>
+      <div class="contact-item"><span class="contact-icon">&#127758;</span><p>www.bellacollection.com</p></div>
+      <div class="contact-item"><span class="contact-icon">&#127757;</span><p class="fr">Distribution dans toute l'Afrique</p><p class="en">Distribution across Africa</p></div>
     </div>
-  </section>
-
-  <!-- NEWSLETTER -->
-  <section class="newsletter">
-    <p class="section-label">Restez informe</p>
-    <div class="divider"></div>
-    <h2 class="section-title">La Newsletter Bella Collection</h2>
-    <p>Recevez nos nouveautes, tutoriels et offres exclusives directement dans votre boite mail.</p>
-    <form class="nl-form" onsubmit="return false;">
-      <input type="email" placeholder="Votre adresse e-mail...">
-      <button type="submit">S inscrire</button>
+    <form class="contact-form" onsubmit="return false;">
+      <input type="text" placeholder="Nom / Name" />
+      <input type="email" placeholder="Email" />
+      <input type="text" placeholder="Pays / Country" />
+      <textarea placeholder="Votre message / Your message"></textarea>
+      <button type="submit" class="fr">Envoyer le message</button>
+      <button type="submit" class="en">Send message</button>
     </form>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact">
-    <p class="section-label">Contactez-nous</p>
-    <div class="divider"></div>
-    <h2 class="section-title">Parlons Ensemble</h2>
-    <p class="section-sub">Besoin de conseils pour choisir vos meches Bella Collection ? Devis professionnel ? Nous repondons sous 24h.</p>
-    <div class="contact-grid">
-      <div class="contact-info">
-        <h3>Hair Prestige Manufacturing</h3>
-        <div class="contact-item"><span class="contact-icon">&#x1F4CD;</span><p>Bella Collection – Siege Social<br>Hair Prestige Manufacturing</p></div>
-        <div class="contact-item"><span class="contact-icon">&#x1F4E7;</span><p>contact@bellacollection.com</p></div>
-        <div class="contact-item"><span class="contact-icon">&#x1F310;</span><p>www.bellacollection.com</p></div>
-        <div class="contact-item"><span class="contact-icon">&#x1F69A;</span><p>Livraison France et International<br>Colissimo – 2 a 5 jours ouvres</p></div>
-      </div>
-      <form class="contact-form" onsubmit="return false;">
-        <input type="text" placeholder="Votre nom">
-        <input type="email" placeholder="Votre e-mail">
-        <input type="text" placeholder="Sujet">
-        <textarea placeholder="Votre message..."></textarea>
-        <button type="submit" class="btn btn-primary">Envoyer le message</button>
-      </form>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-logo">Bella <strong style="color:#fff;">Collection</strong></div>
-    <div class="footer-company">by Hair Prestige Manufacturing</div>
-    <p>&#169; 2026 Hair Prestige Manufacturing – Tous droits reserves</p>
-    <p>
-      <a href="#">Mentions legales</a> &nbsp;|&nbsp;
-      <a href="#">CGV</a> &nbsp;|&nbsp;
-      <a href="#">Politique de confidentialite</a>
-    </p>
-    <p style="margin-top:0.8rem;font-size:0.8rem;">www.bellacollection.com</p>
-  </footer>
-
+  </div>
+</section>
+<footer>
+  <div class="footer-logo"><img src="logo-bella-collection.png" alt="Bella Collection"></div>
+  <div class="footer-company">Hair Prestige Manufacturing Nig. Ltd</div>
+  <p class="fr">&copy; 2025 Hair Prestige Manufacturing &ndash; Tous droits reserves</p>
+  <p class="en">&copy; 2025 Hair Prestige Manufacturing &ndash; All rights reserved</p>
+  <p style="margin-top:0.5rem"><a href="#">Mentions legales</a> | <a href="#contact">Contact</a></p>
+</footer>
+<script>
+function setLang(l){
+  document.body.className=l==='en'?'lang-en':'';
+  document.querySelectorAll('.lang-btn').forEach(function(b){b.classList.toggle('active',b.textContent===l.toUpperCase())});
+}
+</script>
 </body>
-</html>
+  </html>
