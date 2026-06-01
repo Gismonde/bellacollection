@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LumièreVive – Mèches d'Exception</title>
+  <title>Bella Collection – Meches d Exception | Hair Prestige Manufacturing</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -22,6 +22,7 @@
     nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(26,18,9,0.96); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: space-between; padding: 1rem 4rem; }
     .logo { font-size: 1.6rem; font-weight: bold; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; }
     .logo span { color: #fff; font-weight: 300; }
+    .logo-sub { font-size: 0.6rem; color: #9a8a70; letter-spacing: 3px; text-transform: uppercase; display: block; margin-top: -4px; }
     .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a { color: #e0d0b0; font-size: 0.9rem; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
     .nav-links a:hover { color: var(--gold); }
@@ -37,9 +38,11 @@
     .btn-primary { background: var(--gold); color: var(--dark); font-weight: bold; }
     .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(200,169,110,0.4); }
     .btn-outline { border: 2px solid var(--gold); color: var(--gold); margin-left: 1rem; }
+    .btn-outline:hover { background: var(--gold); color: var(--dark); }
     .hero-candles { margin-top: 4rem; display: flex; justify-content: center; gap: 2rem; }
     .candle-icon { font-size: 2.5rem; animation: flicker 2s infinite alternate; filter: drop-shadow(0 0 10px rgba(200,169,110,0.6)); }
     .candle-icon:nth-child(2) { animation-delay: 0.7s; font-size: 3.5rem; }
+    .candle-icon:nth-child(3) { animation-delay: 1.3s; }
     @keyframes flicker { 0% { opacity: 0.85; transform: scale(1) rotate(-1deg); } 100% { opacity: 1; transform: scale(1.05) rotate(1deg); } }
     section { padding: 5rem 2rem; }
     .section-label { text-align: center; color: var(--gold); font-size: 0.75rem; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 0.8rem; }
@@ -72,15 +75,17 @@
     .product-footer { display: flex; align-items: center; justify-content: space-between; }
     .price { font-size: 1.2rem; font-weight: bold; color: var(--accent); }
     .add-btn { background: var(--gold); border: none; color: var(--dark); padding: 0.5rem 1.2rem; border-radius: 20px; cursor: pointer; font-size: 0.85rem; font-family: Georgia, serif; font-weight: bold; transition: all 0.3s; }
+    .add-btn:hover { background: var(--gold-light); transform: scale(1.05); }
     .savoir-faire { background: #f5f0e8; }
     .sf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1100px; margin: 0 auto; align-items: center; }
-    @media (max-width: 768px) { .sf-grid { grid-template-columns: 1fr; } .nav-links { display: none; } nav { padding: 1rem 1.5rem; } }
+    @media (max-width: 768px) { .sf-grid { grid-template-columns: 1fr; } .nav-links { display: none; } nav { padding: 1rem 1.5rem; } .contact-grid { grid-template-columns: 1fr; } }
     .sf-visual { background: var(--dark); border-radius: 20px; height: 400px; display: flex; align-items: center; justify-content: center; font-size: 6rem; position: relative; overflow: hidden; }
     .sf-text h2 { font-size: 2.2rem; margin-bottom: 1rem; }
     .sf-text p { color: var(--text-light); margin-bottom: 1.5rem; }
     .sf-steps { list-style: none; }
     .sf-steps li { display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start; }
     .step-num { min-width: 36px; height: 36px; background: var(--gold); color: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.9rem; }
+    .sf-steps li p { margin: 0; font-size: 0.95rem; }
     .testimonials { background: var(--dark); }
     .testimonials .section-title { color: #fff; }
     .testi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 1100px; margin: 0 auto; }
@@ -93,12 +98,12 @@
     .newsletter .section-title { color: #fff; }
     .newsletter p { color: #9a8a70; margin-bottom: 2rem; }
     .nl-form { display: flex; max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.08); border: 1px solid rgba(200,169,110,0.3); border-radius: 40px; overflow: hidden; padding: 0.3rem; }
-    .nl-form input { flex: 1; background: none; border: none; padding: 0.8rem 1.5rem; color: #fff; font-size: 0.95rem; outline: none; }
+    .nl-form input { flex: 1; background: none; border: none; padding: 0.8rem 1.5rem; color: #fff; font-size: 0.95rem; font-family: Georgia, serif; outline: none; }
     .nl-form input::placeholder { color: #7a6a50; }
-    .nl-form button { background: var(--gold); border: none; padding: 0.8rem 1.8rem; border-radius: 35px; color: var(--dark); font-weight: bold; cursor: pointer; }
+    .nl-form button { background: var(--gold); border: none; padding: 0.8rem 1.8rem; border-radius: 35px; color: var(--dark); font-weight: bold; cursor: pointer; font-family: Georgia, serif; font-size: 0.9rem; transition: background 0.3s; }
+    .nl-form button:hover { background: var(--gold-light); }
     #contact { background: var(--cream); }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; max-width: 1000px; margin: 0 auto; align-items: start; }
-    @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
     .contact-info h3 { font-size: 1.4rem; margin-bottom: 1.5rem; }
     .contact-item { display: flex; gap: 1rem; margin-bottom: 1.5rem; align-items: flex-start; }
     .contact-icon { font-size: 1.5rem; }
@@ -108,13 +113,21 @@
     .contact-form input:focus, .contact-form textarea:focus { border-color: var(--gold); }
     .contact-form textarea { min-height: 130px; resize: vertical; }
     footer { background: var(--dark); color: #7a6a50; text-align: center; padding: 2.5rem; font-size: 0.88rem; }
-    footer .footer-logo { font-size: 1.4rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 0.8rem; }
+    footer .footer-logo { font-size: 1.4rem; color: var(--gold); letter-spacing: 2px; margin-bottom: 0.3rem; }
+    footer .footer-company { font-size: 0.75rem; color: #5a4a30; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1rem; }
+    footer p { margin-bottom: 0.4rem; }
     footer a { color: var(--gold); }
+    footer a:hover { text-decoration: underline; }
   </style>
 </head>
 <body>
+
+  <!-- NAVIGATION -->
   <nav>
-    <div class="logo">Lumiere<span>Vive</span></div>
+    <div class="logo">
+      Bella <span>Collection</span>
+      <span class="logo-sub">by Hair Prestige Manufacturing</span>
+    </div>
     <ul class="nav-links">
       <li><a href="#accueil">Accueil</a></li>
       <li><a href="#produits">Produits</a></li>
@@ -123,11 +136,13 @@
       <li><a href="#produits" class="nav-cta">Boutique</a></li>
     </ul>
   </nav>
+
+  <!-- HERO -->
   <section class="hero" id="accueil">
     <div class="hero-content">
-      <div class="hero-badge">Artisan Francais</div>
-      <h1>Des <span>Meches</span> qui<br>Illuminent l Instant</h1>
-      <p>Meches de coton, de bois et de chanvre faconnees a la main pour sublimer vos bougies et creations.</p>
+      <div class="hero-badge">Hair Prestige Manufacturing</div>
+      <h1>La Marque <span>Bella</span><br>Collection</h1>
+      <p>Meches de coton, de bois et de chanvre faconnees avec precision pour sublimer vos bougies et creations.</p>
       <a href="#produits" class="btn btn-primary">Decouvrir la Collection</a>
       <a href="#savoir-faire" class="btn btn-outline">Notre Savoir-faire</a>
       <div class="hero-candles">
@@ -137,83 +152,168 @@
       </div>
     </div>
   </section>
+
+  <!-- FEATURES -->
   <section class="features">
     <p class="section-label">Nos Engagements</p>
     <div class="divider"></div>
-    <h2 class="section-title">Pourquoi Choisir LumiereVive ?</h2>
-    <p class="section-sub">Chaque meche est selectionnee avec soin pour garantir une combustion parfaite.</p>
+    <h2 class="section-title">Pourquoi Choisir Bella Collection ?</h2>
+    <p class="section-sub">Chaque meche est selectionnee avec soin par Hair Prestige Manufacturing pour garantir une combustion parfaite.</p>
     <div class="features-grid">
-      <div class="feature-card"><div class="feature-icon">&#x1F33F;</div><h3>100% Naturel</h3><p>Fibres non traitees, sans metaux lourds ni produits chimiques.</p></div>
-      <div class="feature-card"><div class="feature-icon">&#x1F525;</div><h3>Combustion Maitrisee</h3><p>Flamme stable, sans claquement ni fumee excessive.</p></div>
-      <div class="feature-card"><div class="feature-icon">&#x1F932;</div><h3>Fait Main</h3><p>Chaque meche est tressee et finie a la main dans notre atelier.</p></div>
-      <div class="feature-card"><div class="feature-icon">&#x1F4E6;</div><h3>Sur Mesure</h3><p>Diametres, longueurs et matieres adaptes a chaque type de cire.</p></div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F33F;</div>
+        <h3>100% Naturel</h3>
+        <p>Fibres non traitees, sans metaux lourds ni produits chimiques, respectueuses de l environnement.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F525;</div>
+        <h3>Combustion Maitrisee</h3>
+        <p>Flamme stable, sans claquement ni fumee excessive, pour une diffusion parfaite de vos fragrances.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F932;</div>
+        <h3>Fait Main</h3>
+        <p>Chaque meche est tressee et finie a la main dans notre atelier de production.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#x1F4E6;</div>
+        <h3>Sur Mesure</h3>
+        <p>Diametres, longueurs et matieres adaptes a chaque type de cire et format de bougie.</p>
+      </div>
     </div>
   </section>
+
+  <!-- PRODUITS -->
   <section id="produits">
     <p class="section-label">Notre Catalogue</p>
     <div class="divider"></div>
-    <h2 class="section-title">Collection de Meches</h2>
+    <h2 class="section-title">Collection Bella – Meches Premium</h2>
     <p class="section-sub">Des meches pour tous les types de cires et toutes les tailles de bougies.</p>
     <div class="products-grid">
-      <div class="product-card"><div class="product-img p1">&#x1F9F5;<span class="badge">Best-seller</span></div><div class="product-info"><h3>Meche Coton Naturel</h3><p class="desc">Tressage classique, ideale pour cires de soja et de paraffine. Diam. 2-8 mm.</p><div class="product-footer"><span class="price">A partir de 4,90 EUR</span><button class="add-btn">Choisir</button></div></div></div>
-      <div class="product-card"><div class="product-img p2">&#x1FAB5;<span class="badge">Tendance</span></div><div class="product-info"><h3>Meche en Bois</h3><p class="desc">Flamme crepitante et chaleur d un feu de bois. Epaisseur 0,5-1,5 mm.</p><div class="product-footer"><span class="price">A partir de 6,50 EUR</span><button class="add-btn">Choisir</button></div></div></div>
-      <div class="product-card"><div class="product-img p3">&#x1F33F;</div><div class="product-info"><h3>Meche Chanvre Bio</h3><p class="desc">Combustion lente et reguliere, parfaite pour bougies pilier.</p><div class="product-footer"><span class="price">A partir de 5,50 EUR</span><button class="add-btn">Choisir</button></div></div></div>
-      <div class="product-card"><div class="product-img p4">&#x2728;<span class="badge">Nouveau</span></div><div class="product-info"><h3>Meche Craquante Double</h3><p class="desc">Double lame bois pour un effet crepitement intense, ideale grands formats.</p><div class="product-footer"><span class="price">A partir de 8,90 EUR</span><button class="add-btn">Choisir</button></div></div></div>
-      <div class="product-card"><div class="product-img p5">&#x1F4A7;</div><div class="product-info"><h3>Meche Coton Cire</h3><p class="desc">Pre-ciree pour une tenue parfaite et un centrage facile dans le moule.</p><div class="product-footer"><span class="price">A partir de 5,20 EUR</span><button class="add-btn">Choisir</button></div></div></div>
-      <div class="product-card"><div class="product-img p6">&#x1F381;</div><div class="product-info"><h3>Kit Decouverte</h3><p class="desc">Assortiment de 30 meches variees pour tester toutes nos gammes.</p><div class="product-footer"><span class="price">24,90 EUR</span><button class="add-btn">Choisir</button></div></div></div>
+      <div class="product-card">
+        <div class="product-img p1">&#x1F9F5;<span class="badge">Best-seller</span></div>
+        <div class="product-info">
+          <h3>Bella Coton Naturel</h3>
+          <p class="desc">Tressage classique, ideale pour cires de soja et de paraffine. Diam. 2-8 mm.</p>
+          <div class="product-footer"><span class="price">A partir de 4,90 EUR</span><button class="add-btn">Choisir</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img p2">&#x1FAB5;<span class="badge">Tendance</span></div>
+        <div class="product-info">
+          <h3>Bella Bois Premium</h3>
+          <p class="desc">Flamme crepitante et chaleur d un feu de bois. Epaisseur 0,5-1,5 mm.</p>
+          <div class="product-footer"><span class="price">A partir de 6,50 EUR</span><button class="add-btn">Choisir</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img p3">&#x1F33F;</div>
+        <div class="product-info">
+          <h3>Bella Chanvre Bio</h3>
+          <p class="desc">Combustion lente et reguliere, parfaite pour bougies pilier et containers larges.</p>
+          <div class="product-footer"><span class="price">A partir de 5,50 EUR</span><button class="add-btn">Choisir</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img p4">&#x2728;<span class="badge">Nouveau</span></div>
+        <div class="product-info">
+          <h3>Bella Double Craquante</h3>
+          <p class="desc">Double lame bois pour un effet crepitement intense, ideale grands formats.</p>
+          <div class="product-footer"><span class="price">A partir de 8,90 EUR</span><button class="add-btn">Choisir</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img p5">&#x1F4A7;</div>
+        <div class="product-info">
+          <h3>Bella Coton Cire</h3>
+          <p class="desc">Pre-ciree pour une tenue parfaite et un centrage facile dans le moule.</p>
+          <div class="product-footer"><span class="price">A partir de 5,20 EUR</span><button class="add-btn">Choisir</button></div>
+        </div>
+      </div>
+      <div class="product-card">
+        <div class="product-img p6">&#x1F381;</div>
+        <div class="product-info">
+          <h3>Bella Kit Decouverte</h3>
+          <p class="desc">Assortiment de 30 meches variees pour tester toute la gamme Bella Collection.</p>
+          <div class="product-footer"><span class="price">24,90 EUR</span><button class="add-btn">Choisir</button></div>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- SAVOIR-FAIRE -->
   <section class="savoir-faire" id="savoir-faire">
     <div class="sf-grid">
       <div class="sf-visual">&#x1F56F;</div>
       <div class="sf-text">
-        <p class="section-label" style="text-align:left">Notre Methode</p>
-        <div class="divider" style="margin:0 0 1rem"></div>
-        <h2>Un Savoir-faire Artisanal</h2>
-        <p>Depuis 2015, nous fabriquons des meches de qualite superieure dans notre atelier normand.</p>
+        <p class="section-label" style="text-align:left;margin-bottom:.5rem;">Notre Methode</p>
+        <div class="divider" style="margin:0 0 1rem;"></div>
+        <h2>Hair Prestige Manufacturing – L Excellence Artisanale</h2>
+        <p>Depuis sa creation, Hair Prestige Manufacturing fabrique des meches de qualite superieure. Chaque lot Bella Collection est teste et valide avant expedition.</p>
         <ul class="sf-steps">
-          <li><div class="step-num">1</div><p><strong>Selection des matieres</strong> - Fibres 100% naturelles sourcees aupres de producteurs certifies.</p></li>
-          <li><div class="step-num">2</div><p><strong>Tressage artisanal</strong> - Realise a la main sur nos metiers a tisser traditionnels.</p></li>
-          <li><div class="step-num">3</div><p><strong>Tests de combustion</strong> - Chaque diametre est teste dans differentes cires.</p></li>
-          <li><div class="step-num">4</div><p><strong>Controle qualite</strong> - Inspection visuelle de chaque bobine avant expedition.</p></li>
+          <li><div class="step-num">1</div><p><strong>Selection des matieres</strong> – Fibres 100% naturelles sourcees aupres de producteurs certifies.</p></li>
+          <li><div class="step-num">2</div><p><strong>Tressage artisanal</strong> – Realise a la main sur nos metiers a tisser traditionnels.</p></li>
+          <li><div class="step-num">3</div><p><strong>Tests de combustion</strong> – Chaque diametre est teste dans differentes cires et temperatures.</p></li>
+          <li><div class="step-num">4</div><p><strong>Controle qualite</strong> – Inspection visuelle et mesure de chaque bobine avant expedition.</p></li>
         </ul>
       </div>
     </div>
   </section>
+
+  <!-- TEMOIGNAGES -->
   <section class="testimonials">
     <p class="section-label">Ils nous font confiance</p>
     <div class="divider"></div>
-    <h2 class="section-title">Avis de nos Clients</h2>
+    <h2 class="section-title">Avis sur Bella Collection</h2>
     <div class="testi-grid">
-      <div class="testi-card"><div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div><p class="testi-text">"Les meches en bois sont absolument magnifiques. Le crepitement est envoutant !"</p><p class="testi-author">Sophie M.</p><p class="testi-role">Creatrice de bougies artisanales</p></div>
-      <div class="testi-card"><div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div><p class="testi-text">"Qualite irreprochable, livraison rapide. Mes clients sont ravis du resultat."</p><p class="testi-author">Marc D.</p><p class="testi-role">Boutiquier - Paris 11e</p></div>
-      <div class="testi-card"><div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div><p class="testi-text">"Le kit decouverte est parfait pour trouver la meche ideale. Je recommande vivement !"</p><p class="testi-author">Elise T.</p><p class="testi-role">Amatrice passionnee</p></div>
+      <div class="testi-card">
+        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <p class="testi-text">"Les meches Bella Bois sont absolument magnifiques. Le crepitement est envoutant et la flamme reste parfaitement stable. Je ne changerai plus !"</p>
+        <p class="testi-author">Sophie M.</p>
+        <p class="testi-role">Creatrice de bougies artisanales</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <p class="testi-text">"Qualite irreprochable, livraison rapide. J ai commande les meches Bella Coton pour ma boutique et mes clients sont ravis du resultat."</p>
+        <p class="testi-author">Marc D.</p>
+        <p class="testi-role">Boutiquier – Paris 11e</p>
+      </div>
+      <div class="testi-card">
+        <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+        <p class="testi-text">"Le kit decouverte Bella est parfait pour trouver la meche ideale. Accompagnement tres reactif de Hair Prestige Manufacturing, je recommande vivement !"</p>
+        <p class="testi-author">Elise T.</p>
+        <p class="testi-role">Amatrice passionnee</p>
+      </div>
     </div>
   </section>
+
+  <!-- NEWSLETTER -->
   <section class="newsletter">
     <p class="section-label">Restez informe</p>
     <div class="divider"></div>
-    <h2 class="section-title">La Newsletter LumiereVive</h2>
-    <p>Recevez nos nouveautes, tutoriels et offres exclusives dans votre boite mail.</p>
-    <form class="nl-form" onsubmit="return false">
+    <h2 class="section-title">La Newsletter Bella Collection</h2>
+    <p>Recevez nos nouveautes, tutoriels et offres exclusives directement dans votre boite mail.</p>
+    <form class="nl-form" onsubmit="return false;">
       <input type="email" placeholder="Votre adresse e-mail...">
       <button type="submit">S inscrire</button>
     </form>
   </section>
+
+  <!-- CONTACT -->
   <section id="contact">
     <p class="section-label">Contactez-nous</p>
     <div class="divider"></div>
     <h2 class="section-title">Parlons Ensemble</h2>
-    <p class="section-sub">Besoin de conseils ? Devis professionnel ? Nous repondons sous 24h.</p>
+    <p class="section-sub">Besoin de conseils pour choisir vos meches Bella Collection ? Devis professionnel ? Nous repondons sous 24h.</p>
     <div class="contact-grid">
       <div class="contact-info">
-        <h3>LumiereVive Atelier</h3>
-        <div class="contact-item"><span class="contact-icon">&#x1F4CD;</span><p>12 Rue des Artisans<br>27000 Evreux, Normandie</p></div>
-        <div class="contact-item"><span class="contact-icon">&#x1F4E7;</span><p>contact@lumierevive.fr</p></div>
-        <div class="contact-item"><span class="contact-icon">&#x1F4DE;</span><p>+33 (0)2 32 XX XX XX<br>Lun-Ven, 9h-18h</p></div>
-        <div class="contact-item"><span class="contact-icon">&#x1F69A;</span><p>Livraison France et Europe<br>Colissimo - 2 a 4 jours ouvres</p></div>
+        <h3>Hair Prestige Manufacturing</h3>
+        <div class="contact-item"><span class="contact-icon">&#x1F4CD;</span><p>Bella Collection – Siege Social<br>Hair Prestige Manufacturing</p></div>
+        <div class="contact-item"><span class="contact-icon">&#x1F4E7;</span><p>contact@bellacollection.com</p></div>
+        <div class="contact-item"><span class="contact-icon">&#x1F310;</span><p>www.bellacollection.com</p></div>
+        <div class="contact-item"><span class="contact-icon">&#x1F69A;</span><p>Livraison France et International<br>Colissimo – 2 a 5 jours ouvres</p></div>
       </div>
-      <form class="contact-form" onsubmit="return false">
+      <form class="contact-form" onsubmit="return false;">
         <input type="text" placeholder="Votre nom">
         <input type="email" placeholder="Votre e-mail">
         <input type="text" placeholder="Sujet">
@@ -222,11 +322,19 @@
       </form>
     </div>
   </section>
+
+  <!-- FOOTER -->
   <footer>
-    <div class="footer-logo">Lumiere<strong style="color:#fff">Vive</strong></div>
-    <p>2026 LumiereVive - Tous droits reserves</p>
-    <p><a href="#">Mentions legales</a> | <a href="#">CGV</a> | <a href="#">Politique de confidentialite</a></p>
-    <p style="margin-top:0.8rem;font-size:0.8rem">Fait avec amour en Normandie, France</p>
+    <div class="footer-logo">Bella <strong style="color:#fff;">Collection</strong></div>
+    <div class="footer-company">by Hair Prestige Manufacturing</div>
+    <p>&#169; 2026 Hair Prestige Manufacturing – Tous droits reserves</p>
+    <p>
+      <a href="#">Mentions legales</a> &nbsp;|&nbsp;
+      <a href="#">CGV</a> &nbsp;|&nbsp;
+      <a href="#">Politique de confidentialite</a>
+    </p>
+    <p style="margin-top:0.8rem;font-size:0.8rem;">www.bellacollection.com</p>
   </footer>
+
 </body>
 </html>
