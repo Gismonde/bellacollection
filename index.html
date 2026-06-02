@@ -56,7 +56,9 @@ section{padding:5rem 1.5rem}
 .feat{background:rgba(255, 140, 105,.1);color:var(--salmon-d);font-size:.62rem;padding:.1rem .45rem;border-radius:8px;white-space:nowrap}
 .colors-label{font-size:.68rem;color:var(--tl);margin-bottom:.3rem}
 .swatches{display:flex;gap:.3rem;flex-wrap:wrap;margin-bottom:.7rem}
-.sw{width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(0,0,0,.12);flex-shrink:0}
+.sw{width:16px;height:16px;border-radius:50%;border:1.5px solid rgba(0,0,0,.12);flex-shrink:0;position:relative;cursor:default}
+.sw::after{content:attr(title);position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);background:#3D2B2B;color:#fff;font-size:.65rem;padding:.2rem .5rem;border-radius:6px;white-space:nowrap;pointer-events:none;opacity:0;transition:opacity .2s;z-index:10}
+.sw:hover::after{opacity:1}
 .card-wa{display:flex;align-items:center;justify-content:center;gap:.4rem;background:#25d366;color:#fff;padding:.5rem;border-radius:18px;font-size:.78rem;font-weight:bold;width:100%;transition:all .3s}
 .card-wa:hover{background:#1da851}
 #about{background:linear-gradient(160deg,#fdf0ea 0%,var(--cream) 100%)}
