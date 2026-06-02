@@ -129,6 +129,19 @@ body.en .fr-only{display:none}
 .new-product-colors-label{font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#888;margin-bottom:.6rem}
 .new-product-swatches{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
 .npsw{width:26px!important;height:26px!important;border-radius:50%!important;border:2px solid rgba(0,0,0,.15)!important;cursor:default!important}
+
+/* === VIDEOS QUICK BELLA BRAID === */
+.qbb-videos{background:#1a0e0e;padding:3rem 1rem}
+.qbb-videos-inner{max-width:1100px;margin:0 auto}
+.qbb-videos-title{text-align:center;font-family:'Playfair Display',serif;font-size:1.6rem;color:#fff;margin-bottom:.4rem}
+.qbb-videos-title span{color:var(--salmon)}
+.qbb-videos-sub{text-align:center;font-size:.78rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:2.2rem}
+.qbb-videos-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.qbb-video-card{display:flex;flex-direction:column;gap:.8rem}
+.qbb-video-label{display:inline-flex;align-items:center;gap:.5rem;background:var(--salmon);color:#fff;font-size:.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.3rem .9rem;border-radius:20px;width:fit-content}
+.qbb-video-wrap{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.5)}
+.qbb-video-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;border-radius:14px}
+@media(max-width:768px){.qbb-videos-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body class="fr"><nav>
@@ -195,6 +208,28 @@ body.en .fr-only{display:none}
     <div class="new-product-img-wrap">
       <div class="new-ribbon">NEW</div>
       <img src="prod-quick-bella-braid.jpg" alt="Quick Bella Braid" onclick="openLightbox('prod-quick-bella-braid.jpg','Quick Bella Braid')">
+    </div>
+  </div>
+</section>
+
+
+<section class="qbb-videos">
+  <div class="qbb-videos-inner">
+    <h2 class="qbb-videos-title">Quick Bella <span>Braid</span> — <span class="fr-only">En vidéo</span><span class="en-only">Watch it</span></h2>
+    <p class="qbb-videos-sub"><span class="fr-only">Découvrez le produit en action</span><span class="en-only">See the product in action</span></p>
+    <div class="qbb-videos-grid">
+      <div class="qbb-video-card">
+        <span class="qbb-video-label">🇫🇷 Français</span>
+        <div class="qbb-video-wrap">
+          <iframe src="https://www.youtube.com/embed/pY2HgdpoQug" title="Quick Bella Braid - Publicité FR" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
+      <div class="qbb-video-card">
+        <span class="qbb-video-label">🇬🇧 English</span>
+        <div class="qbb-video-wrap">
+          <iframe src="https://www.youtube.com/embed/ECw0ti9PnFs" title="Quick Bella Braid - Ad EN" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
   </div>
 </section>
